@@ -38,6 +38,9 @@
 .header ol {
     margin-bottom: 0;
 }
+.page-wraper{
+	overflow: hidden;
+}
 /*without top bar*/
 .secondary-menu {
     float: right;
