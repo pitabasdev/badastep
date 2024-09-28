@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />
+    <meta name="description" content="Badastep" />
+    <meta property="og:title" content="Badastep" />
+    <meta property="og:description" content="Badastep" />
+    <meta property="og:image" content="" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="icon" href="../error-404.html" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/images/finallogo.png"
+    />
+
+    <!-- PAGE TITLE HERE ============================================= -->
+    <title>Badastep</title>
+
+    <!-- MOBILE SPECIFIC ============================================= -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.min.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- All PLUGINS CSS ============================================= -->
+    <link rel="stylesheet" type="text/css" href="assets/css/assets.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/vendors/calendar/fullcalendar.css"
+    />
+
+    <!-- TYPOGRAPHY ============================================= -->
+    <link rel="stylesheet" type="text/css" href="assets/css/typography.css" />
+
+    <!-- SHORTCODES ============================================= -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/shortcodes/shortcodes.css"
+    />
+
+    <!-- STYLESHEETS ============================================= -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/dashboard.css" />
+    <link
+      class="skin"
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/color/color-1.css"
+    />
+    <style>
+      .ttr-content {
+        padding-left: 250px; /* Adjust this value based on the width of your sidebar */
+        transition: padding-left 0.3s; /* Smooth transition when sidebar opens */
+      }
+
+      .ttr-sidebar {
+        width: 250px; /* Set a fixed width for your sidebar */
+      }
+
+      .ttr-sidebar.ttr-opened-sidebar {
+        padding-left: 0; /* Remove padding when sidebar is closed */
+      }
+      a {
+        text-decoration: none;
+      }
+      body {
+          background-color: #f8f9fa;
+        }
+        .custom-card {
+          margin-top: 30px;
+        }
+        .custom-btn {
+          margin-top: 10px;
+        }
+        .table-responsive {
+          margin-top: 20px;
+        }
+    </style>
+
+  </head>
+  <body class="ttr-opened-sidebar ttr-pinned-sidebar">
+    <header class="ttr-header">
+      <div class="ttr-header-wrapper">
+        <!-- Sidebar menu toggler start -->
+        <div class="ttr-toggle-sidebar ttr-material-button">
+          <i class="ti-close ttr-open-icon"></i>
+          <i class="ti-menu ttr-close-icon"></i>
+        </div>
+        <!-- Sidebar menu toggler end -->
+
+        <!-- Logo start -->
+        <div class="ttr-logo-box">
+          <a href="index.html" class="ttr-logo">
+            <img
+              class="ttr-logo-mobile"
+              alt="Mobile Logo"
+              src="assets/images/finallogo.png"
+              width="30"
+              height="30"
+            />
+            <img
+              class="ttr-logo-desktop"
+              alt="Desktop Logo"
+              src="assets/images/finallogo.png"
+              width="90"
+              height="70"
+            />
+          </a>
+        </div>
+        <!-- Logo end -->
+
+        <!-- Header left menu start -->
+        <div class="ttr-header-menu">
+          <ul class="ttr-header-navigation">
+            <li>
+              <a
+                href="index.html"
+                class="ttr-material-button ttr-submenu-toggle"
+                >HOME</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- Header left menu end -->
+
+        <!-- Header right menu start -->
+        <div class="ttr-header-right ttr-with-seperator">
+          <ul class="ttr-header-navigation">
+            <li>
+              <a href="#" class="ttr-material-button ttr-search-toggle"
+                ><i class="fa fa-search"></i
+              ></a>
+            </li>
+            <li>
+              <a href="#" class="ttr-material-button ttr-submenu-toggle"
+                ><i class="fa fa-bell"></i
+              ></a>
+              <div class="ttr-header-submenu noti-menu">
+                <div class="ttr-notify-header">
+                  <span class="ttr-notify-text-top">9 New</span>
+                  <span class="ttr-notify-text">User Notifications</span>
+                </div>
+                <div class="noti-box-list">
+                  <ul>
+                    <li>
+                      <span class="notification-icon dashbg-gray"
+                        ><i class="fa fa-check"></i
+                      ></span>
+                      <span class="notification-text"
+                        ><span>Sneha Jogi</span> sent you a message.</span
+                      >
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a><span> 02:14</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="notification-icon dashbg-yellow"
+                        ><i class="fa fa-shopping-cart"></i
+                      ></span>
+                      <span class="notification-text"
+                        ><a href="#">Your order is placed</a> sent you a
+                        message.</span
+                      >
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a><span> 7 Min</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="notification-icon dashbg-red"
+                        ><i class="fa fa-bullhorn"></i
+                      ></span>
+                      <span class="notification-text"
+                        ><span>Your item is shipped</span> sent you a
+                        message.</span
+                      >
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a><span> 2 May</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="notification-icon dashbg-green"
+                        ><i class="fa fa-comments-o"></i
+                      ></span>
+                      <span class="notification-text"
+                        ><a href="#">Sneha Jogi</a> sent you a message.</span
+                      >
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a
+                        ><span> 14 July</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="notification-icon dashbg-primary"
+                        ><i class="fa fa-file-word-o"></i
+                      ></span>
+                      <span class="notification-text"
+                        ><span>Sneha Jogi</span> sent you a message.</span
+                      >
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a><span> 15 Min</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- Header right menu end -->
+
+        <!-- Header search panel start -->
+        <div class="ttr-search-bar">
+          <form class="ttr-search-form">
+            <div class="ttr-search-input-wrapper">
+              <input
+                type="text"
+                name="qq"
+                placeholder="search something..."
+                class="ttr-search-input"
+              />
+              <button type="submit" name="search" class="ttr-search-submit">
+                <i class="ti-arrow-right"></i>
+              </button>
+            </div>
+            <span class="ttr-search-close ttr-search-toggle">
+              <i class="ti-close"></i>
+            </span>
+          </form>
+        </div>
+        <!-- Header search panel end -->
+      </div>
+    </header>
+
+    <div class="ttr-sidebar">
+      <div class="ttr-sidebar-wrapper content-scroll">
+        <!-- side menu logo start -->
+        <div class="ttr-sidebar-logo" style="border: none">
+          <a href="#"
+            ><img
+              alt=""
+              src="assets/images/final-logo.png"
+              width="112"
+              height=""
+            /><strong>BADASTEP</strong></a
+          >
+          <!-- <div class="ttr-sidebar-pin-button" title="Pin/Unpin Menu">
+					<i class="material-icons ttr-fixed-icon">hide</i>
+					<i class="material-icons ttr-not-fixed-icon">show</i>
+				</div> -->
+          <div class="ttr-sidebar-toggle-button">
+            <i class="ti-arrow-left"></i>
+          </div>
+        </div>
+        <nav class="ttr-sidebar-navi">
+          <ul>
+            <li>
+              <a href="index.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-home"></i></span>
+                <span class="ttr-label">Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="organization.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-briefcase"></i></span>
+                <span class="ttr-label">Organization</span>
+              </a>
+            </li>
+            <li>
+              <a href="ranking.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-crown"></i></span>
+                <span class="ttr-label">Ranking</span>
+              </a>
+            </li>
+            <li>
+              <a href="topcolleges.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-book"></i></span>
+                <span class="ttr-label">Top Colleges</span>
+              </a>
+            </li>
+            <li>
+              <a href="gallery-category.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-image"></i></span>
+                <span class="ttr-label">Gallery Category</span>
+              </a>
+            </li>
+            <li>
+              <a href="gallery.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-gallery"></i></span>
+                <span class="ttr-label">Gallery</span>
+              </a>
+            </li>
+            <li>
+              <a href="placement.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-briefcase"></i></span>
+                <span class="ttr-label">Placement</span>
+              </a>
+            </li>
+            <li>
+              <a href="careers.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-flag-alt"></i></span>
+                <span class="ttr-label">Careers</span>
+              </a>
+            </li>
+            <li>
+              <a href="approves.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-check-box"></i></span>
+                <span class="ttr-label">Approves</span>
+              </a>
+            </li>
+            <li>
+              <a href="categories.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-folder"></i></span>
+                <span class="ttr-label">Categories</span>
+              </a>
+            </li>
+            <li>
+              <a href="facilities.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-medall-alt"></i></span>
+                <span class="ttr-label">Facilities</span>
+              </a>
+            </li>
+            <li>
+              <a href="leads.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-bookmark-alt"></i></span>
+                <span class="ttr-label">Leads</span>
+              </a>
+            </li>
+            <li>
+              <a href="streams.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-layers"></i></span>
+                <span class="ttr-label">Streams</span>
+              </a>
+            </li>
+            <li>
+              <a href="courses.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-book"></i></span>
+                <span class="ttr-label">Course</span>
+              </a>
+            </li>
+            <li>
+              <a href="course-type.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-tag"></i></span>
+                <span class="ttr-label">Course Type</span>
+              </a>
+            </li>
+            <li>
+              <a href="course-duration.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-time"></i></span>
+                <span class="ttr-label">Course Duration</span>
+              </a>
+            </li>
+            <li>
+              <a href="course-eligibility.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-id-badge"></i></span>
+                <span class="ttr-label">Course Eligibility</span>
+              </a>
+            </li>
+            <li>
+              <a href="main.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-layout"></i></span>
+                <span class="ttr-label">Main</span>
+              </a>
+            </li>
+            <li>
+              <a href="courses-main.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-book"></i></span>
+                <span class="ttr-label">Courses</span>
+              </a>
+            </li>
+            <li>
+              <a href="colleges.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-blackboard"></i></span>
+                <span class="ttr-label">Colleges</span>
+              </a>
+            </li>
+            <li>
+              <a href="blogs.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-pencil-alt"></i></span>
+                <span class="ttr-label">Blogs</span>
+              </a>
+            </li>
+            <li>
+              <a href="blogs-categories.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-folder"></i></span>
+                <span class="ttr-label">Blogs Categories</span>
+              </a>
+            </li>
+            <li class="ttr-seperate"></li>
+          </ul>
+          <!-- sidebar menu end -->
+        </nav>
+
+        <!-- sidebar menu end -->
+      </div>
+    </div>
+    <div class="container">
+      <div class="card custom-card shadow">
+        <div class="card-header bg-primary text-white">
+          <h2 class="text-center">Upload College Data</h2>
+        </div>
+        <div class="card-body">
+          <form id="uploadForm" class="form-inline justify-content-center">
+            <div class="form-group mb-2">
+              <label for="fileInput" class="sr-only">Upload File</label>
+              <input
+                type="file"
+                id="fileInput"
+                class="form-control-file"
+                accept=".xlsx, .xls"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-success custom-btn mb-2 ml-2">
+              Upload
+            </button>
+          </form>
+          <div
+            id="response"
+            class="alert alert-info mt-3"
+            role="alert"
+            style="display: none"
+          ></div>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <h3 class="text-center mt-4">College Data</h3>
+        <table
+          class="table table-bordered table-striped table-hover"
+          id="collegeTable"
+        >
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Stream</th>
+              <th scope="col">College Name</th>
+              <th scope="col">Course</th>
+              <th scope="col">Fees</th>
+            </tr>
+          </thead>
+          <tbody id="collegeTableBody">
+            <!-- Data will be dynamically inserted here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      // Attach event listener to the form
+      document
+        .getElementById("uploadForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const fileInput = document.getElementById("fileInput");
+          const file = fileInput.files[0];
+
+          if (!file) {
+            alert("Please select a file!");
+            return;
+          }
+
+          const formData = new FormData();
+          formData.append("file", file);
+
+          try {
+            const response = await fetch("http://localhost:5000/addData", {
+              method: "POST",
+              body: formData,
+            });
+
+            const result = await response.json();
+            document.getElementById("response").innerText = result.message;
+
+            if (response.ok) {
+              // Fetch and display data after successful upload
+              fetchCollegeData();
+            }
+          } catch (error) {
+            console.error("Error uploading file:", error);
+            document.getElementById("response").innerText =
+              "Error uploading file";
+          }
+        });
+
+      // Fetch and display the uploaded college data
+      async function fetchCollegeData() {
+        try {
+          const response = await fetch("http://localhost:5000/getData");
+          const data = await response.json();
+
+          const tableBody = document.getElementById("collegeTableBody");
+          tableBody.innerHTML = ""; // Clear the table body before inserting new data
+
+          data.forEach((stream) => {
+            stream.colleges.forEach((college) => {
+              college.courses.forEach((course) => {
+                const row = document.createElement("tr");
+
+                const streamCell = document.createElement("td");
+                streamCell.innerText = stream.name;
+                row.appendChild(streamCell);
+
+                const collegeCell = document.createElement("td");
+                collegeCell.innerText = college.name;
+                row.appendChild(collegeCell);
+
+                const courseCell = document.createElement("td");
+                courseCell.innerText = course.name;
+                row.appendChild(courseCell);
+
+                const feesCell = document.createElement("td");
+                feesCell.innerText = course.fees;
+                row.appendChild(feesCell);
+
+                tableBody.appendChild(row);
+              });
+            });
+          });
+        } catch (error) {
+          console.error("Error fetching college data:", error);
+        }
+      }
+
+      // Load the existing data when the page loads
+      window.onload = fetchCollegeData;
+    </script>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/popper.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+    <script src="assets/vendors/magnific-popup/magnific-popup.js"></script>
+    <script src="assets/vendors/counter/waypoints-min.js"></script>
+    <script src="assets/vendors/counter/counterup.min.js"></script>
+    <script src="assets/vendors/imagesloaded/imagesloaded.js"></script>
+    <script src="assets/vendors/masonry/masonry.js"></script>
+    <script src="assets/vendors/masonry/filter.js"></script>
+    <script src="assets/vendors/owl-carousel/owl.carousel.js"></script>
+    <script src="assets/vendors/scroll/scrollbar.min.js"></script>
+    <script src="assets/js/functions.js"></script>
+    <script src="assets/vendors/chart/chart.min.js"></script>
+    <script src="assets/js/admin.js"></script>
+    <script src="assets/vendors/calendar/moment.min.js"></script>
+    <script src="assets/vendors/calendar/fullcalendar.js"></script>
+    <script src="assets/vendors/switcher/switcher.js"></script>
+  </body>
+</html>

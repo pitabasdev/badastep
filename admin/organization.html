@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />
+    <meta name="description" content="Badastep" />
+    <meta property="og:title" content="Badastep" />
+    <meta property="og:description" content="Badastep" />
+    <meta property="og:image" content="" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="icon" href="../error-404.html" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/images/finallogo.png"
+    />
+
+    <!-- PAGE TITLE HERE ============================================= -->
+    <title>Badastep</title>
+
+    <!-- MOBILE SPECIFIC ============================================= -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.min.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- All PLUGINS CSS ============================================= -->
+    <link rel="stylesheet" type="text/css" href="assets/css/assets.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/vendors/calendar/fullcalendar.css"
+    />
+
+    <!-- TYPOGRAPHY ============================================= -->
+    <link rel="stylesheet" type="text/css" href="assets/css/typography.css" />
+
+    <!-- SHORTCODES ============================================= -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/shortcodes/shortcodes.css"
+    />
+
+    <!-- STYLESHEETS ============================================= -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/dashboard.css" />
+    <link
+      class="skin"
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/color/color-1.css"
+    />
+    <style>
+      .ttr-content {
+        padding-left: 250px; /* Adjust this value based on the width of your sidebar */
+        transition: padding-left 0.3s; /* Smooth transition when sidebar opens */
+      }
+      .ttr-sidebar {
+        width: 250px; /* Set a fixed width for your sidebar */
+      }
+      .ttr-sidebar.ttr-opened-sidebar {
+        padding-left: 0; /* Remove padding when sidebar is closed */
+      }
+      a {
+        text-decoration: none;
+      }
+
+      /* Modal Styles */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+      }
+
+      .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 500px; /* Responsive width */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .modal-footer {
+        text-align: right;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        background-color: #007bff;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s; /* Smooth hover effect */
+        white-space: nowrap; /* Prevent text wrapping */
+        max-width: 200px; /* Ensure button does not exceed its container */
+        overflow: hidden; /* Hide overflow text */
+        text-overflow: ellipsis; /* Show ellipsis for overflow text */
+      }
+
+      .btn:hover {
+        background-color: #0056b3;
+      }
+
+      .btn-secondary {
+        background-color: #6c757d;
+      }
+
+      .btn-secondary:hover {
+        background-color: #5a6268;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      .create-button {
+        margin-top: 60px;
+      }
+
+      /* Responsive Design for Mobile View */
+      @media (max-width: 768px) {
+        .modal-content {
+          width: 90%;
+          margin: 5% auto; /* Center the modal on mobile */
+        }
+
+        .modal-footer {
+          display: flex;
+          flex-direction: column; /* Stack buttons vertically */
+          align-items: stretch; /* Stretch buttons to full width */
+        }
+
+        /* Adjust table styling */
+        #organizationsTable {
+          width: 100%; /* Ensure the table takes full width */
+        }
+
+        th,
+        td {
+          padding: 10px; /* Increase padding for better touch targets */
+          font-size: 14px; /* Adjust font size for readability */
+        }
+
+        .btn {
+          width: 100%; /* Full-width buttons on mobile */
+          margin: 10px 0; /* Space between buttons */
+          padding: 10px; /* Adjust padding */
+          font-size: 14px; /* Adjust font size */
+        }
+
+        .btn-secondary {
+          margin-bottom: 10px; /* Space before Save button */
+        }
+
+        /* Adjust the overall table for better readability on small screens */
+        tbody {
+          display: block; /* Make tbody block to stack rows */
+          overflow-x: auto; /* Enable horizontal scroll if needed */
+          white-space: nowrap; /* Prevent line breaks */
+        }
+
+        tr {
+          display: table; /* Reset to table for each row */
+          width: 100%; /* Ensure each row takes full width */
+        }
+      }
+    </style>
+  </head>
+  <body class="ttr-opened-sidebar ttr-pinned-sidebar">
+    <header class="ttr-header">
+      <div class="ttr-header-wrapper">
+        <!-- Sidebar menu toggler start -->
+        <div class="ttr-toggle-sidebar ttr-material-button">
+          <i class="ti-close ttr-open-icon"></i>
+          <i class="ti-menu ttr-close-icon"></i>
+        </div>
+        <!-- Sidebar menu toggler end -->
+
+        <!-- Logo start -->
+        <div class="ttr-logo-box">
+          <a href="index.html" class="ttr-logo">
+            <img
+              class="ttr-logo-mobile"
+              alt="Mobile Logo"
+              src="assets/images/finallogo.png"
+              width="30"
+              height="30"
+            />
+            <img
+              class="ttr-logo-desktop"
+              alt="Desktop Logo"
+              src="assets/images/finallogo.png"
+              width="90"
+              height="70"
+            />
+          </a>
+        </div>
+        <!-- Logo end -->
+
+        <!-- Header left menu start -->
+        <div class="ttr-header-menu">
+          <ul class="ttr-header-navigation">
+            <li>
+              <a
+                href="index.html"
+                class="ttr-material-button ttr-submenu-toggle"
+                >HOME</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- Header left menu end -->
+
+        <!-- Header right menu start -->
+        <div class="ttr-header-right ttr-with-seperator">
+          <ul class="ttr-header-navigation">
+            <li>
+              <a href="#" class="ttr-material-button ttr-search-toggle"
+                ><i class="fa fa-search"></i
+              ></a>
+            </li>
+            <li>
+              <a href="#" class="ttr-material-button ttr-submenu-toggle"
+                ><i class="fa fa-bell"></i
+              ></a>
+              <div class="ttr-header-submenu noti-menu">
+                <div class="ttr-notify-header">
+                  <span class="ttr-notify-text-top">9 New</span>
+                  <span class="ttr-notify-text">User Notifications</span>
+                </div>
+                <div class="noti-box-list">
+                  <ul>
+                    <li>
+                      <span class="notification-icon dashbg-gray"
+                        ><i class="fa fa-check"></i
+                      ></span>
+                      <span class="notification-text"
+                        ><span>Sneha Jogi</span> sent you a message.</span
+                      >
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a><span> 02:14</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="notification-icon dashbg-yellow"
+                        ><i class="fa fa-shopping-cart"></i
+                      ></span>
+                      <span class="notification-text"
+                        ><a href="#">Your order is placed</a> sent you a
+                        message.</span
+                      >
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a><span> 7 Min</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="notification-icon dashbg-red"
+                        ><i class="fa fa-bullhorn"></i
+                      ></span>
+                      <span class="notification-text"
+                        ><span>Your item is shipped</span> sent you a
+                        message.</span
+                      >
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a><span> 2 May</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="notification-icon dashbg-green"
+                        ><i class="fa fa-comments-o"></i
+                      ></span>
+                      <span class="notification-text"
+                        ><a href="#">Sneha Jogi</a> sent you a message.</span
+                      >
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a
+                        ><span> 14 July</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="notification-icon dashbg-primary"
+                        ><i class="fa fa-file-word-o"></i
+                      ></span>
+                      <span class="notification-text"
+                        ><span>Sneha Jogi</span> sent you a message.</span
+                      >
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a><span> 15 Min</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- Header right menu end -->
+
+        <!-- Header search panel start -->
+        <div class="ttr-search-bar">
+          <form class="ttr-search-form">
+            <div class="ttr-search-input-wrapper">
+              <input
+                type="text"
+                name="qq"
+                placeholder="search something..."
+                class="ttr-search-input"
+              />
+              <button type="submit" name="search" class="ttr-search-submit">
+                <i class="ti-arrow-right"></i>
+              </button>
+            </div>
+            <span class="ttr-search-close ttr-search-toggle">
+              <i class="ti-close"></i>
+            </span>
+          </form>
+        </div>
+        <!-- Header search panel end -->
+      </div>
+    </header>
+
+    <div class="ttr-sidebar">
+      <div class="ttr-sidebar-wrapper content-scroll">
+        <!-- side menu logo start -->
+        <div class="ttr-sidebar-logo" style="border: none">
+          <a href="#"
+            ><img
+              alt=""
+              src="assets/images/final-logo.png"
+              width="112"
+              height=""
+            /><strong>BADASTEP</strong></a
+          >
+          <div class="ttr-sidebar-toggle-button">
+            <i class="ti-arrow-left"></i>
+          </div>
+        </div>
+        <nav class="ttr-sidebar-navi">
+          <ul>
+            <li>
+              <a href="index.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-home"></i></span>
+                <span class="ttr-label">Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="organization.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-briefcase"></i></span>
+                <span class="ttr-label">Organization</span>
+              </a>
+            </li>
+            <li>
+              <a href="ranking.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-crown"></i></span>
+                <span class="ttr-label">Ranking</span>
+              </a>
+            </li>
+            <li>
+              <a href="topcolleges.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-book"></i></span>
+                <span class="ttr-label">Top Colleges</span>
+              </a>
+            </li>
+            <li>
+              <a href="gallery-category.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-image"></i></span>
+                <span class="ttr-label">Gallery Category</span>
+              </a>
+            </li>
+            <li>
+              <a href="gallery.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-gallery"></i></span>
+                <span class="ttr-label">Gallery</span>
+              </a>
+            </li>
+            <li>
+              <a href="placement.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-briefcase"></i></span>
+                <span class="ttr-label">Placement</span>
+              </a>
+            </li>
+            <li>
+              <a href="careers.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-flag-alt"></i></span>
+                <span class="ttr-label">Careers</span>
+              </a>
+            </li>
+            <li>
+              <a href="approves.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-check-box"></i></span>
+                <span class="ttr-label">Approves</span>
+              </a>
+            </li>
+            <li>
+              <a href="categories.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-folder"></i></span>
+                <span class="ttr-label">Categories</span>
+              </a>
+            </li>
+            <li>
+              <a href="facilities.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-medall-alt"></i></span>
+                <span class="ttr-label">Facilities</span>
+              </a>
+            </li>
+            <li>
+              <a href="leads.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-bookmark-alt"></i></span>
+                <span class="ttr-label">Leads</span>
+              </a>
+            </li>
+            <li>
+              <a href="streams.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-layers"></i></span>
+                <span class="ttr-label">Streams</span>
+              </a>
+            </li>
+            <li>
+              <a href="courses.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-book"></i></span>
+                <span class="ttr-label">Course</span>
+              </a>
+            </li>
+            <li>
+              <a href="course-type.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-tag"></i></span>
+                <span class="ttr-label">Course Type</span>
+              </a>
+            </li>
+            <li>
+              <a href="course-duration.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-time"></i></span>
+                <span class="ttr-label">Course Duration</span>
+              </a>
+            </li>
+            <li>
+              <a href="course-eligibility.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-id-badge"></i></span>
+                <span class="ttr-label">Course Eligibility</span>
+              </a>
+            </li>
+            <li>
+              <a href="main.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-layout"></i></span>
+                <span class="ttr-label">Main</span>
+              </a>
+            </li>
+            <li>
+              <a href="courses-main.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-book"></i></span>
+                <span class="ttr-label">Courses</span>
+              </a>
+            </li>
+            <li>
+              <a href="colleges.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-blackboard"></i></span>
+                <span class="ttr-label">Colleges</span>
+              </a>
+            </li>
+            <li>
+              <a href="blogs.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-pencil-alt"></i></span>
+                <span class="ttr-label">Blogs</span>
+              </a>
+            </li>
+            <li>
+              <a href="blogs-categories.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-folder"></i></span>
+                <span class="ttr-label">Blogs Categories</span>
+              </a>
+            </li>
+            <li class="ttr-seperate"></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="ttr-content">
+      <div style="padding: 20px">
+        <button class="btn create-button" id="openModalBtn">
+          Create Organization
+        </button>
+        <div class="table-responsive">
+          <table
+            class="table table-bordered table-striped"
+            id="organizationsTable"
+          >
+            <thead class="thead-dark">
+              <tr>
+                <th>Sl.No</th>
+                <th>Organization Name</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="organizationsBody"></tbody>
+          </table>
+        </div>
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close" id="closeModalBtn">&times;</span>
+            <h2>Create Organization</h2>
+            <div class="form-group">
+              <label for="organizationName">Organization Name:</label>
+              <input
+                type="text"
+                id="organizationName"
+                placeholder="Enter organization name"
+              />
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" id="cancelBtn">Cancel</button>
+              <button class="btn" id="saveBtn">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var modal = document.getElementById("myModal");
+      var openModalBtn = document.getElementById("openModalBtn");
+      var closeModalBtn = document.getElementById("closeModalBtn");
+      var cancelBtn = document.getElementById("cancelBtn");
+      openModalBtn.onclick = function () {
+        modal.style.display = "block";
+      };
+      closeModalBtn.onclick = function () {
+        modal.style.display = "none";
+      };
+      cancelBtn.onclick = function () {
+        modal.style.display = "none";
+      };
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/popper.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+    <script src="assets/vendors/magnific-popup/magnific-popup.js"></script>
+    <script src="assets/vendors/counter/waypoints-min.js"></script>
+    <script src="assets/vendors/counter/counterup.min.js"></script>
+    <script src="assets/vendors/imagesloaded/imagesloaded.js"></script>
+    <script src="assets/vendors/masonry/masonry.js"></script>
+    <script src="assets/vendors/masonry/filter.js"></script>
+    <script src="assets/vendors/owl-carousel/owl.carousel.js"></script>
+    <script src="assets/vendors/scroll/scrollbar.min.js"></script>
+    <script src="assets/js/functions.js"></script>
+    <script src="assets/vendors/chart/chart.min.js"></script>
+    <script src="assets/js/admin.js"></script>
+    <script src="assets/vendors/calendar/moment.min.js"></script>
+    <script src="assets/vendors/calendar/fullcalendar.js"></script>
+    <script src="assets/vendors/switcher/switcher.js"></script>
+  </body>
+</html>

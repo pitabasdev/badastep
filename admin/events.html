@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- META ============================================= -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />
+
+    <!-- DESCRIPTION -->
+    <meta name="description" content="Badastep" />
+
+    <!-- OG -->
+    <meta property="og:title" content="Badastep" />
+    <meta property="og:description" content="Badastep" />
+    <meta property="og:image" content="" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- FAVICONS ICON ============================================= -->
+    <link rel="icon" href="../error-404.html" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/images/finallogo.png"
+    />
+
+    <!-- PAGE TITLE HERE ============================================= -->
+    <title>Badastep</title>
+
+    <!-- MOBILE SPECIFIC ============================================= -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.min.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- All PLUGINS CSS ============================================= -->
+    <link rel="stylesheet" type="text/css" href="assets/css/assets.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/vendors/calendar/fullcalendar.css"
+    />
+
+    <!-- TYPOGRAPHY ============================================= -->
+    <link rel="stylesheet" type="text/css" href="assets/css/typography.css" />
+
+    <!-- SHORTCODES ============================================= -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/shortcodes/shortcodes.css"
+    />
+
+    <!-- STYLESHEETS ============================================= -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/dashboard.css" />
+    <link
+      class="skin"
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/color/color-1.css"
+    />
+    <style>
+      a {
+        text-decoration: none;
+      }
+      .event-data {
+        font-family: Arial, sans-serif;
+        padding: 100px 20px; /* Added responsive padding */
+        background-color: #f8f9fa;
+      }
+
+      .container {
+        margin: auto;
+        padding: 20px;
+      }
+
+      h1,
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .event-bx {
+        border: 1px solid #ddd;
+        margin-bottom: 20px;
+        padding: 15px;
+        background-color: #fff;
+      }
+
+      /* Form Styling */
+      .form-container {
+        max-width: 600px;
+        margin: 20px auto;
+        background: #f7f7f7;
+        border: 2px solid #007bff; /* Bootstrap primary color */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+      }
+
+      .form-title {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #4c1864;
+      }
+
+      .form-label {
+        font-weight: bold;
+        color: #333;
+      }
+
+      .btn-primary {
+        background-color: #4c1864;
+        border: none;
+      }
+
+      .btn-primary:hover {
+        background-color: #bf84ff;
+      }
+
+      .create-button button {
+        background-color: #4c1864;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .create-button button:hover {
+        background-color: orange;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
+        body {
+          padding: 20px;
+        }
+
+        .form-container {
+          padding: 20px;
+        }
+
+        .form-row {
+          display: block;
+        }
+
+        .form-group {
+          margin-bottom: 15px;
+        }
+
+        .btn-lg {
+          font-size: 14px;
+          padding: 10px 20px;
+        }
+
+        .container {
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body class="ttr-opened-sidebar ttr-pinned-sidebar">
+    <!-- header start -->
+    <header class="ttr-header">
+      <div class="ttr-header-wrapper">
+        <!--sidebar menu toggler start -->
+        <div class="ttr-toggle-sidebar ttr-material-button">
+          <i class="ti-close ttr-open-icon"></i>
+          <i class="ti-menu ttr-close-icon"></i>
+        </div>
+        <!--sidebar menu toggler end -->
+        <!--logo start -->
+        <div class="ttr-logo-box">
+          <div>
+            <a href="index.html" class="ttr-logo">
+              <img
+                class="ttr-logo-mobile"
+                alt=""
+                src="assets/images/finallogo.png"
+                width="30"
+                height="30"
+              />
+              <img
+                class="ttr-logo-desktop"
+                alt=""
+                src="assets/images/finallogo.png"
+                width="90"
+                height="70"
+              />
+            </a>
+          </div>
+        </div>
+        <!--logo end -->
+        <div class="ttr-header-menu">
+          <!-- header left menu start -->
+          <ul class="ttr-header-navigation">
+            <li>
+              <a
+                href="index.html"
+                class="ttr-material-button ttr-submenu-toggle"
+                >HOME</a
+              >
+              <!-- <a href="../index.html" class="ttr-material-button ttr-submenu-toggle">HOME</a> -->
+            </li>
+          </ul>
+          <!-- header left menu end -->
+        </div>
+        <div class="ttr-header-right ttr-with-seperator">
+          <!-- header right menu start -->
+          <ul class="ttr-header-navigation">
+            <li>
+              <a href="#" class="ttr-material-button ttr-search-toggle"
+                ><i class="fa fa-search"></i
+              ></a>
+            </li>
+            <li>
+              <a href="#" class="ttr-material-button ttr-submenu-toggle"
+                ><i class="fa fa-bell"></i
+              ></a>
+              <div class="ttr-header-submenu noti-menu">
+                <div class="ttr-notify-header">
+                  <span class="ttr-notify-text-top">9 New</span>
+                  <span class="ttr-notify-text">User Notifications</span>
+                </div>
+                <div class="noti-box-list">
+                  <ul>
+                    <li>
+                      <span class="notification-icon dashbg-gray">
+                        <i class="fa fa-check"></i>
+                      </span>
+                      <span class="notification-text">
+                        <span>Sneha Jogi</span> sent you a message.
+                      </span>
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a>
+                        <span> 02:14</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="notification-icon dashbg-yellow">
+                        <i class="fa fa-shopping-cart"></i>
+                      </span>
+                      <span class="notification-text">
+                        <a href="#">Your order is placed</a> sent you a message.
+                      </span>
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a>
+                        <span> 7 Min</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="notification-icon dashbg-red">
+                        <i class="fa fa-bullhorn"></i>
+                      </span>
+                      <span class="notification-text">
+                        <span>Your item is shipped</span> sent you a message.
+                      </span>
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a>
+                        <span> 2 May</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="notification-icon dashbg-green">
+                        <i class="fa fa-comments-o"></i>
+                      </span>
+                      <span class="notification-text">
+                        <a href="#">Sneha Jogi</a> sent you a message.
+                      </span>
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a>
+                        <span> 14 July</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="notification-icon dashbg-primary">
+                        <i class="fa fa-file-word-o"></i>
+                      </span>
+                      <span class="notification-text">
+                        <span>Sneha Jogi</span> sent you a message.
+                      </span>
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a>
+                        <span> 15 Min</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <!-- header right menu end -->
+        </div>
+        <!--header search panel start -->
+        <div class="ttr-search-bar">
+          <form class="ttr-search-form">
+            <div class="ttr-search-input-wrapper">
+              <input
+                type="text"
+                name="qq"
+                placeholder="search something..."
+                class="ttr-search-input"
+              />
+              <button type="submit" name="search" class="ttr-search-submit">
+                <i class="ti-arrow-right"></i>
+              </button>
+            </div>
+            <span class="ttr-search-close ttr-search-toggle">
+              <i class="ti-close"></i>
+            </span>
+          </form>
+        </div>
+        <!--header search panel end -->
+      </div>
+    </header>
+    <!-- header end -->
+    <!-- Left sidebar menu start -->
+    <div class="ttr-sidebar">
+      <div class="ttr-sidebar-wrapper content-scroll">
+        <!-- side menu logo start -->
+        <div class="ttr-sidebar-logo" style="border: none">
+          <a href="#"
+            ><img
+              alt=""
+              src="assets/images/final-logo.png"
+              width="112"
+              height=""
+            /><strong>BADASTEP</strong></a
+          >
+          <!-- <div class="ttr-sidebar-pin-button" title="Pin/Unpin Menu">
+					<i class="material-icons ttr-fixed-icon">hide</i>
+					<i class="material-icons ttr-not-fixed-icon">show</i>
+				</div> -->
+          <div class="ttr-sidebar-toggle-button">
+            <i class="ti-arrow-left"></i>
+          </div>
+        </div>
+        <!-- side menu logo end -->
+        <!-- sidebar menu start -->
+        <nav class="ttr-sidebar-navi">
+          <ul>
+            <li>
+              <a href="index.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-home"></i></span>
+                <span class="ttr-label">Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="organization.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-briefcase"></i></span>
+                <span class="ttr-label">Organization</span>
+              </a>
+            </li>
+            <li>
+              <a href="ranking.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-crown"></i></span>
+                <span class="ttr-label">Ranking</span>
+              </a>
+            </li>
+            <li>
+              <a href="topcolleges.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-book"></i></span>
+                <span class="ttr-label">Top Colleges</span>
+              </a>
+            </li>
+            <li>
+              <a href="gallery-category.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-image"></i></span>
+                <span class="ttr-label">Gallery Category</span>
+              </a>
+            </li>
+            <li>
+              <a href="gallery.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-gallery"></i></span>
+                <span class="ttr-label">Gallery</span>
+              </a>
+            </li>
+            <li>
+              <a href="placement.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-briefcase"></i></span>
+                <span class="ttr-label">Placement</span>
+              </a>
+            </li>
+            <li>
+              <a href="careers.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-flag-alt"></i></span>
+                <span class="ttr-label">Careers</span>
+              </a>
+            </li>
+            <li>
+              <a href="approves.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-check-box"></i></span>
+                <span class="ttr-label">Approves</span>
+              </a>
+            </li>
+            <li>
+              <a href="categories.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-folder"></i></span>
+                <span class="ttr-label">Categories</span>
+              </a>
+            </li>
+            <li>
+              <a href="facilities.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-medall-alt"></i></span>
+                <span class="ttr-label">Facilities</span>
+              </a>
+            </li>
+            <li>
+              <a href="leads.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-bookmark-alt"></i></span>
+                <span class="ttr-label">Leads</span>
+              </a>
+            </li>
+            <li>
+              <a href="streams.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-layers"></i></span>
+                <span class="ttr-label">Streams</span>
+              </a>
+            </li>
+            <li>
+              <a href="courses.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-book"></i></span>
+                <span class="ttr-label">Course</span>
+              </a>
+            </li>
+            <li>
+              <a href="course-type.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-tag"></i></span>
+                <span class="ttr-label">Course Type</span>
+              </a>
+            </li>
+            <li>
+              <a href="course-duration.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-time"></i></span>
+                <span class="ttr-label">Course Duration</span>
+              </a>
+            </li>
+            <li>
+              <a href="course-eligibility.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-id-badge"></i></span>
+                <span class="ttr-label">Course Eligibility</span>
+              </a>
+            </li>
+            <li>
+              <a href="main.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-layout"></i></span>
+                <span class="ttr-label">Main</span>
+              </a>
+            </li>
+            <li>
+              <a href="courses-main.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-book"></i></span>
+                <span class="ttr-label">Courses</span>
+              </a>
+            </li>
+            <li>
+              <a href="colleges.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-blackboard"></i></span>
+                <span class="ttr-label">Colleges</span>
+              </a>
+            </li>
+            <li>
+              <a href="blogs.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-pencil-alt"></i></span>
+                <span class="ttr-label">Blogs</span>
+              </a>
+            </li>
+            <li>
+              <a href="blogs-categories.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-folder"></i></span>
+                <span class="ttr-label">Blogs Categories</span>
+              </a>
+            </li>
+            <li class="ttr-seperate"></li>
+          </ul>
+          <!-- sidebar menu end -->
+        </nav>
+
+        <!-- sidebar menu end -->
+      </div>
+    </div>
+
+    <div class="event-data">
+      <div class="container">
+        <h1>Event Management</h1>
+
+        <!-- Event Form -->
+        <div id="eventForm" class="form-container">
+          <h2 class="form-title">Add New Event</h2>
+          <form id="addEventForm" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="event_id" id="event_id" />
+
+            <!-- Event Title -->
+            <div class="form-group">
+              <label for="event_title" class="form-label">Event Title:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="event_title"
+                name="event_title"
+                placeholder="Enter event title"
+                required
+              />
+            </div>
+
+            <!-- Event Date and Time -->
+            <div class="form-row">
+              <div class="form-group col-md-6 col-sm-12">
+                <label for="event_date" class="form-label">Event Date:</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="event_date"
+                  name="event_date"
+                  required
+                />
+              </div>
+
+              <div class="form-group col-md-3 col-sm-6">
+                <label for="event_time_start" class="form-label"
+                  >Start Time:</label
+                >
+                <input
+                  type="time"
+                  class="form-control"
+                  id="event_time_start"
+                  name="event_time_start"
+                  required
+                />
+              </div>
+
+              <div class="form-group col-md-3 col-sm-6">
+                <label for="event_time_end" class="form-label">End Time:</label>
+                <input
+                  type="time"
+                  class="form-control"
+                  id="event_time_end"
+                  name="event_time_end"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Event Location -->
+            <div class="form-group">
+              <label for="event_location" class="form-label">Location:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="event_location"
+                name="event_location"
+                placeholder="Enter event location"
+                required
+              />
+            </div>
+
+            <!-- Event Description -->
+            <div class="form-group">
+              <label for="event_description" class="form-label"
+                >Description:</label
+              >
+              <textarea
+                class="form-control"
+                id="event_description"
+                name="event_description"
+                rows="4"
+                placeholder="Enter event description"
+                required
+              ></textarea>
+            </div>
+
+            <!-- Event Image -->
+            <div class="form-group">
+              <label for="event_image" class="form-label">Event Image:</label>
+              <input
+                type="file"
+                class="form-control-file"
+                id="event_image"
+                name="event_image"
+                accept="image/*"
+                required
+              />
+            </div>
+
+            <!-- Form Buttons -->
+            <div class="form-group text-center">
+              <button type="submit" class="btn btn-primary btn-lg">
+                Submit
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary btn-lg"
+                onclick="resetForm()"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <h2>Upcoming Events</h2>
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
+            <thead class="thead-light">
+              <tr>
+                <th>Event Title</th>
+                <th>Date</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Location</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="eventTableBody">
+              <!-- Event data will be populated here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("addEventForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          const formData = new FormData(this);
+
+          try {
+            const response = await fetch("http://localhost:5000/events/add", {
+              method: "POST",
+              body: formData,
+            });
+
+            if (response.ok) {
+              const result = await response.json();
+              alert(result.message);
+              resetForm();
+            } else {
+              const error = await response.json();
+              alert("Error: " + error.message);
+            }
+          } catch (error) {
+            alert("An error occurred: " + error.message);
+          }
+        });
+      function resetForm() {
+        document.getElementById("addEventForm").reset();
+      }
+
+      async function fetchEvents() {
+        try {
+          const response = await fetch("http://localhost:5000/events/get");
+          const events = await response.json();
+
+          const tableBody = document.getElementById("eventTableBody");
+          tableBody.innerHTML = ""; // Clear existing rows
+
+          events.forEach((event) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                    <td>${event.event_title}</td>
+                    <td>${new Date(event.event_date).toLocaleDateString()}</td>
+                    <td>${event.event_time_start}</td>
+                    <td>${event.event_time_end}</td>
+                    <td>${event.event_location}</td>
+                    <td>${event.event_description}</td>
+                    <td><img src="${event.event_image}" alt="${
+              event.event_title
+            }" width="100"></td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" onclick="updateEvent(${
+                          event.event_id
+                        })">Update</button>
+                        <button class="btn btn-danger btn-sm" onclick="deleteEvent(${
+                          event.event_id
+                        })">Delete</button>
+                    </td>
+                `;
+            tableBody.appendChild(row);
+          });
+        } catch (error) {
+          console.error("Error fetching events:", error);
+        }
+      }
+
+      async function deleteEvent(eventId) {
+        if (confirm("Are you sure you want to delete this event?")) {
+          try {
+            const response = await fetch(
+              `http://localhost:5000/events/delete/${eventId}`,
+              { method: "DELETE" }
+            );
+            if (response.ok) {
+              alert("Event deleted successfully!");
+              fetchEvents(); // Refresh the event list
+            } else {
+              alert("Error deleting event.");
+            }
+          } catch (error) {
+            console.error("Error deleting event:", error);
+          }
+        }
+      }
+
+      function updateEvent(eventId) {
+        alert(
+          "Update event functionality to be implemented for event ID: " +
+            eventId
+        );
+      }
+      window.onload = fetchEvents;
+      function resetForm() {
+        document.getElementById("addEventForm").reset(); // Reset all form fields
+      }
+    </script>
+    <!-- External JavaScripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/popper.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+    <script src="assets/vendors/magnific-popup/magnific-popup.js"></script>
+    <script src="assets/vendors/counter/waypoints-min.js"></script>
+    <script src="assets/vendors/counter/counterup.min.js"></script>
+    <script src="assets/vendors/imagesloaded/imagesloaded.js"></script>
+    <script src="assets/vendors/masonry/masonry.js"></script>
+    <script src="assets/vendors/masonry/filter.js"></script>
+    <script src="assets/vendors/owl-carousel/owl.carousel.js"></script>
+    <script src="assets/vendors/scroll/scrollbar.min.js"></script>
+    <script src="assets/js/functions.js"></script>
+    <script src="assets/vendors/chart/chart.min.js"></script>
+    <script src="assets/js/admin.js"></script>
+    <script src="assets/vendors/calendar/moment.min.js"></script>
+    <script src="assets/vendors/calendar/fullcalendar.js"></script>
+    <script src="assets/vendors/switcher/switcher.js"></script>
+  </body>
+</html>

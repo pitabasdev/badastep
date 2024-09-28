@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- META ============================================= -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />
+
+    <!-- DESCRIPTION -->
+    <meta name="description" content="Badastep" />
+
+    <!-- OG -->
+    <meta property="og:title" content="Badastep" />
+    <meta property="og:description" content="Badastep" />
+    <meta property="og:image" content="" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- FAVICONS ICON ============================================= -->
+    <link rel="icon" href="../error-404.html" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/images/finallogo.png"
+    />
+
+    <!-- PAGE TITLE HERE ============================================= -->
+    <title>Badastep</title>
+
+    <!-- MOBILE SPECIFIC ============================================= -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.min.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- All PLUGINS CSS ============================================= -->
+    <link rel="stylesheet" type="text/css" href="assets/css/assets.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/vendors/calendar/fullcalendar.css"
+    />
+
+    <!-- TYPOGRAPHY ============================================= -->
+    <link rel="stylesheet" type="text/css" href="assets/css/typography.css" />
+
+    <!-- SHORTCODES ============================================= -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/shortcodes/shortcodes.css"
+    />
+
+    <!-- STYLESHEETS ============================================= -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/dashboard.css" />
+    <link
+      class="skin"
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/color/color-1.css"
+    />
+    <style>
+      a {
+        text-decoration: none;
+      }
+      .add-college {
+        padding: 100px 20px;
+        background-color: #f8f9fa;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #fff;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #e2e6ea;
+      }
+      img {
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+
+      .form-container {
+        background-color: #ffffff;
+        padding: 30px;
+        border: 2px solid #007bff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+      }
+      h3 {
+        color: #343a40;
+      }
+      .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+      .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body class="ttr-opened-sidebar ttr-pinned-sidebar">
+    <!-- header start -->
+    <header class="ttr-header">
+      <div class="ttr-header-wrapper">
+        <!--sidebar menu toggler start -->
+        <div class="ttr-toggle-sidebar ttr-material-button">
+          <i class="ti-close ttr-open-icon"></i>
+          <i class="ti-menu ttr-close-icon"></i>
+        </div>
+        <!--sidebar menu toggler end -->
+        <!--logo start -->
+        <div class="ttr-logo-box">
+          <div>
+            <a href="index.html" class="ttr-logo">
+              <img
+                class="ttr-logo-mobile"
+                alt=""
+                src="assets/images/finallogo.png"
+                width="30"
+                height="30"
+              />
+              <img
+                class="ttr-logo-desktop"
+                alt=""
+                src="assets/images/finallogo.png"
+                width="90"
+                height="70"
+              />
+            </a>
+          </div>
+        </div>
+        <!--logo end -->
+        <div class="ttr-header-menu">
+          <!-- header left menu start -->
+          <ul class="ttr-header-navigation">
+            <li>
+              <a
+                href="index.html"
+                class="ttr-material-button ttr-submenu-toggle"
+                >HOME</a
+              >
+              <!-- <a href="../index.html" class="ttr-material-button ttr-submenu-toggle">HOME</a> -->
+            </li>
+          </ul>
+          <!-- header left menu end -->
+        </div>
+        <div class="ttr-header-right ttr-with-seperator">
+          <!-- header right menu start -->
+          <ul class="ttr-header-navigation">
+            <li>
+              <a href="#" class="ttr-material-button ttr-search-toggle"
+                ><i class="fa fa-search"></i
+              ></a>
+            </li>
+            <li>
+              <a href="#" class="ttr-material-button ttr-submenu-toggle"
+                ><i class="fa fa-bell"></i
+              ></a>
+              <div class="ttr-header-submenu noti-menu">
+                <div class="ttr-notify-header">
+                  <span class="ttr-notify-text-top">9 New</span>
+                  <span class="ttr-notify-text">User Notifications</span>
+                </div>
+                <div class="noti-box-list">
+                  <ul>
+                    <li>
+                      <span class="notification-icon dashbg-gray">
+                        <i class="fa fa-check"></i>
+                      </span>
+                      <span class="notification-text">
+                        <span>Sneha Jogi</span> sent you a message.
+                      </span>
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a>
+                        <span> 02:14</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="notification-icon dashbg-yellow">
+                        <i class="fa fa-shopping-cart"></i>
+                      </span>
+                      <span class="notification-text">
+                        <a href="#">Your order is placed</a> sent you a message.
+                      </span>
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a>
+                        <span> 7 Min</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="notification-icon dashbg-red">
+                        <i class="fa fa-bullhorn"></i>
+                      </span>
+                      <span class="notification-text">
+                        <span>Your item is shipped</span> sent you a message.
+                      </span>
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a>
+                        <span> 2 May</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="notification-icon dashbg-green">
+                        <i class="fa fa-comments-o"></i>
+                      </span>
+                      <span class="notification-text">
+                        <a href="#">Sneha Jogi</a> sent you a message.
+                      </span>
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a>
+                        <span> 14 July</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="notification-icon dashbg-primary">
+                        <i class="fa fa-file-word-o"></i>
+                      </span>
+                      <span class="notification-text">
+                        <span>Sneha Jogi</span> sent you a message.
+                      </span>
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a>
+                        <span> 15 Min</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <!-- header right menu end -->
+        </div>
+        <!--header search panel start -->
+        <div class="ttr-search-bar">
+          <form class="ttr-search-form">
+            <div class="ttr-search-input-wrapper">
+              <input
+                type="text"
+                name="qq"
+                placeholder="search something..."
+                class="ttr-search-input"
+              />
+              <button type="submit" name="search" class="ttr-search-submit">
+                <i class="ti-arrow-right"></i>
+              </button>
+            </div>
+            <span class="ttr-search-close ttr-search-toggle">
+              <i class="ti-close"></i>
+            </span>
+          </form>
+        </div>
+        <!--header search panel end -->
+      </div>
+    </header>
+    <!-- header end -->
+    <!-- Left sidebar menu start -->
+    <div class="ttr-sidebar">
+      <div class="ttr-sidebar-wrapper content-scroll">
+        <!-- side menu logo start -->
+        <div class="ttr-sidebar-logo" style="border: none">
+          <a href="#"
+            ><img
+              alt=""
+              src="assets/images/final-logo.png"
+              width="112"
+              height=""
+            /><strong>BADASTEP</strong></a
+          >
+          <!-- <div class="ttr-sidebar-pin-button" title="Pin/Unpin Menu">
+					<i class="material-icons ttr-fixed-icon">hide</i>
+					<i class="material-icons ttr-not-fixed-icon">show</i>
+				</div> -->
+          <div class="ttr-sidebar-toggle-button">
+            <i class="ti-arrow-left"></i>
+          </div>
+        </div>
+        <!-- side menu logo end -->
+        <!-- sidebar menu start -->
+        <nav class="ttr-sidebar-navi">
+          <ul>
+            <li>
+              <a href="index.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-home"></i></span>
+                <span class="ttr-label">Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="organization.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-briefcase"></i></span>
+                <span class="ttr-label">Organization</span>
+              </a>
+            </li>
+            <li>
+              <a href="ranking.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-crown"></i></span>
+                <span class="ttr-label">Ranking</span>
+              </a>
+            </li>
+            <li>
+              <a href="topcolleges.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-book"></i></span>
+                <span class="ttr-label">Top Colleges</span>
+              </a>
+            </li>
+            <li>
+              <a href="gallery-category.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-image"></i></span>
+                <span class="ttr-label">Gallery Category</span>
+              </a>
+            </li>
+            <li>
+              <a href="gallery.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-gallery"></i></span>
+                <span class="ttr-label">Gallery</span>
+              </a>
+            </li>
+            <li>
+              <a href="placement.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-briefcase"></i></span>
+                <span class="ttr-label">Placement</span>
+              </a>
+            </li>
+            <li>
+              <a href="careers.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-flag-alt"></i></span>
+                <span class="ttr-label">Careers</span>
+              </a>
+            </li>
+            <li>
+              <a href="approves.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-check-box"></i></span>
+                <span class="ttr-label">Approves</span>
+              </a>
+            </li>
+            <li>
+              <a href="categories.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-folder"></i></span>
+                <span class="ttr-label">Categories</span>
+              </a>
+            </li>
+            <li>
+              <a href="facilities.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-medall-alt"></i></span>
+                <span class="ttr-label">Facilities</span>
+              </a>
+            </li>
+            <li>
+              <a href="leads.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-bookmark-alt"></i></span>
+                <span class="ttr-label">Leads</span>
+              </a>
+            </li>
+            <li>
+              <a href="streams.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-layers"></i></span>
+                <span class="ttr-label">Streams</span>
+              </a>
+            </li>
+            <li>
+              <a href="courses.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-book"></i></span>
+                <span class="ttr-label">Course</span>
+              </a>
+            </li>
+            <li>
+              <a href="course-type.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-tag"></i></span>
+                <span class="ttr-label">Course Type</span>
+              </a>
+            </li>
+            <li>
+              <a href="course-duration.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-time"></i></span>
+                <span class="ttr-label">Course Duration</span>
+              </a>
+            </li>
+            <li>
+              <a href="course-eligibility.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-id-badge"></i></span>
+                <span class="ttr-label">Course Eligibility</span>
+              </a>
+            </li>
+            <li>
+              <a href="main.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-layout"></i></span>
+                <span class="ttr-label">Main</span>
+              </a>
+            </li>
+            <li>
+              <a href="courses-main.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-book"></i></span>
+                <span class="ttr-label">Courses</span>
+              </a>
+            </li>
+            <li>
+              <a href="colleges.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-blackboard"></i></span>
+                <span class="ttr-label">Colleges</span>
+              </a>
+            </li>
+            <li>
+              <a href="blogs.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-pencil-alt"></i></span>
+                <span class="ttr-label">Blogs</span>
+              </a>
+            </li>
+            <li>
+              <a href="blogs-categories.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-folder"></i></span>
+                <span class="ttr-label">Blogs Categories</span>
+              </a>
+            </li>
+            <li class="ttr-seperate"></li>
+          </ul>
+          <!-- sidebar menu end -->
+        </nav>
+
+        <!-- sidebar menu end -->
+      </div>
+    </div>
+
+    <div class="add-college">
+      <div class="container">
+        <div class="form-container">
+          <h3 class="text-center">Add New College</h3>
+          <form id="collegeForm" enctype="multipart/form-data">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="rank">Rank</label>
+                <input
+                  type="text"
+                  name="rank"
+                  class="form-control"
+                  id="rank"
+                  placeholder="Rank"
+                  required
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="name">College Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  class="form-control"
+                  id="name"
+                  placeholder="College Name"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="location">Location</label>
+                <input
+                  type="text"
+                  name="location"
+                  class="form-control"
+                  id="location"
+                  placeholder="Location"
+                  required
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="ranking">Ranking</label>
+                <input
+                  type="text"
+                  name="ranking"
+                  class="form-control"
+                  id="ranking"
+                  placeholder="Ranking"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="cutoff">Cutoff</label>
+                <input
+                  type="text"
+                  name="cutoff"
+                  class="form-control"
+                  id="cutoff"
+                  placeholder="Cutoff"
+                  required
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="deadline">Application Deadline</label>
+                <input
+                  type="date"
+                  name="deadline"
+                  class="form-control"
+                  id="deadline"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="fees">Fees</label>
+                <input
+                  type="text"
+                  name="fees"
+                  class="form-control"
+                  id="fees"
+                  placeholder="Fees"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="image">Upload Image</label>
+                <input
+                  type="file"
+                  name="image"
+                  class="form-control-file"
+                  id="image"
+                  accept="image/*"
+                  required
+                />
+              </div>
+            </div>
+
+            <button type="submit" name="add" class="btn btn-primary btn-block">
+              Add College
+            </button>
+
+            <!-- New section for Excel sheet upload -->
+            <div class="form-group mt-4">
+              <label for="excelSheet"
+                >Upload Excel Sheet for Multiple Data Update</label
+              >
+              <input
+                type="file"
+                name="excelSheet"
+                class="form-control-file"
+                id="excelSheet"
+                accept=".xls,.xlsx"
+              />
+              <small class="form-text text-muted"
+                >Please upload a valid Excel file (.xls or .xlsx).</small
+              >
+            </div>
+          </form>
+        </div>
+        <div class="table-responsive mt-5">
+          <h4 class="text-center">All Colleges</h4>
+          <table class="table table-bordered table-striped" id="collegeTable">
+            <thead class="thead-dark">
+              <tr>
+                <th>Rank</th>
+                <th>College Name</th>
+                <th>Location</th>
+                <th>Ranking</th>
+                <th>Cutoff</th>
+                <th>Application Deadline</th>
+                <th>Fees</th>
+                <th>Image</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("collegeForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          const formData = new FormData();
+
+          const rank = document.getElementById("rank").value;
+          const name = document.getElementById("name").value;
+          const location = document.getElementById("location").value;
+          const ranking = document.getElementById("ranking").value;
+          const cutoff = document.getElementById("cutoff").value;
+          const deadline = document.getElementById("deadline").value;
+          const fees = document.getElementById("fees").value;
+          const imageFile = document.getElementById("image").files[0];
+
+          formData.append("rank", rank);
+          formData.append("name", name);
+          formData.append("location", location);
+          formData.append("ranking", ranking);
+          formData.append("cutoff", cutoff);
+          formData.append("deadline", deadline);
+          formData.append("fees", fees);
+          formData.append("image", imageFile);
+
+          try {
+            // Send the POST request to the server
+            const response = await fetch("http://localhost:5000/addcollege", {
+              method: "POST",
+              body: formData,
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+              alert("College data added successfully!");
+              document.getElementById("collegeForm").reset();
+            } else {
+              alert("Failed to add college data: " + result.message);
+            }
+          } catch (error) {
+            console.error("Error submitting form:", error);
+            alert("An error occurred while submitting the form.");
+          }
+        });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const collegeTableBody = document.querySelector("#collegeTable tbody");
+
+        // Fetch all colleges and display them in the table
+        fetch("http://localhost:5000/colleges")
+          .then((response) => response.json())
+          .then((data) => {
+            const colleges = data.colleges;
+
+            colleges.forEach((college) => {
+              const row = document.createElement("tr");
+
+              // Add college details to the row
+              row.innerHTML = `
+                    <td>${college.rank}</td>
+                    <td>${college.name}</td>
+                    <td>${college.location}</td>
+                    <td>${college.ranking}</td>
+                    <td>${college.cutoff}</td>
+                    <td>${new Date(college.deadline).toLocaleDateString()}</td>
+                    <td>${college.fees}</td>
+                    <td><img src="http://localhost:5000/${
+                      college.image
+                    }" alt="College Image" class="img-fluid" style="max-width: 100px;"></td>
+                    <td>
+                        <button class="btn btn-warning btn-sm update-btn" style="" data-id="${
+                          college._id
+                        }">Update</button>
+                        <button class="btn btn-danger btn-sm delete-btn" style="width:65px" data-id="${
+                          college._id
+                        }">Delete</button>
+                    </td>
+                `;
+
+              // Append the row to the table body
+              collegeTableBody.appendChild(row);
+            });
+
+            // Add event listeners for update and delete buttons
+            document.querySelectorAll(".delete-btn").forEach((button) => {
+              button.addEventListener("click", handleDelete);
+            });
+
+            document.querySelectorAll(".update-btn").forEach((button) => {
+              button.addEventListener("click", handleUpdate);
+            });
+          })
+          .catch((error) => console.error("Error fetching colleges:", error));
+
+        // Handle college deletion
+        function handleDelete(event) {
+          const collegeId = event.target.getAttribute("data-id");
+
+          if (confirm("Are you sure you want to delete this college?")) {
+            fetch(`http://localhost:5000/college/${collegeId}`, {
+              method: "DELETE",
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                alert(data.message);
+                location.reload(); // Reload the page after deletion
+              })
+              .catch((error) =>
+                console.error("Error deleting college:", error)
+              );
+          }
+        }
+
+        // Handle college update
+        function handleUpdate(event) {
+          const collegeId = event.target.getAttribute("data-id");
+          // Redirect to update page (you need to implement the update page)
+          window.location.href = `/updateCollege.html?id=${collegeId}`;
+        }
+      });
+    </script>
+    <!-- External JavaScripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/popper.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+    <script src="assets/vendors/magnific-popup/magnific-popup.js"></script>
+    <script src="assets/vendors/counter/waypoints-min.js"></script>
+    <script src="assets/vendors/counter/counterup.min.js"></script>
+    <script src="assets/vendors/imagesloaded/imagesloaded.js"></script>
+    <script src="assets/vendors/masonry/masonry.js"></script>
+    <script src="assets/vendors/masonry/filter.js"></script>
+    <script src="assets/vendors/owl-carousel/owl.carousel.js"></script>
+    <script src="assets/vendors/scroll/scrollbar.min.js"></script>
+    <script src="assets/js/functions.js"></script>
+    <script src="assets/vendors/chart/chart.min.js"></script>
+    <script src="assets/js/admin.js"></script>
+    <script src="assets/vendors/calendar/moment.min.js"></script>
+    <script src="assets/vendors/calendar/fullcalendar.js"></script>
+    <script src="assets/vendors/switcher/switcher.js"></script>
+  </body>
+</html>

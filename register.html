@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BadaStep Website - Signup</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/assets.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/typography.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/shortcodes/shortcodes.css"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link
+      class="skin"
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/color/color-1.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="ssets/css/bootstrap.min.cssa"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body id="bg">
+    <div class="page-wraper">
+      <div class="account-form">
+        <div
+          class="account-head"
+          style="background-image: url(assets/images/background/bg2.jpg)"
+        >
+          <a href="index.html"
+            ><img src="assets/images/final-logo.png" alt=""
+          /></a>
+        </div>
+        <div class="account-form-inner">
+          <div class="account-container">
+            <div class="heading-bx left">
+              <h2 class="title-head">Sign Up <span>Now</span></h2>
+              <p>
+                Already have an account? <a href="login.html">Login here</a>
+              </p>
+            </div>
+            <div
+              id="error-message"
+              style="color: red; display: none; margin-top: 10px"
+            ></div>
+            <form id="registerForm" class="contact-bx">
+              <div class="row placeani">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <label>Your Name</label>
+                      <input
+                        name="name"
+                        id="name"
+                        type="text"
+                        required=""
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <label>Your Email Address</label>
+                      <input
+                        name="email"
+                        id="email"
+                        type="email"
+                        required=""
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <label>Your Password</label>
+                      <input
+                        name="password"
+                        id="password"
+                        type="password"
+                        required=""
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <label>Confirm Password</label>
+                      <input
+                        name="confirmPassword"
+                        id="confirmPassword"
+                        type="password"
+                        required=""
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 m-b30">
+                  <button type="button" id="registerBtn" class="btn button-md">
+                    Sign Up
+                  </button>
+                </div>
+                <div class="col-lg-12">
+                  <h6>Sign Up with Social media</h6>
+                  <div class="d-flex">
+                    <a class="btn flex-fill m-r5 facebook" href="#"
+                      ><i class="fa fa-facebook"></i> Facebook</a
+                    >
+                    <a class="btn flex-fill m-l5 google-plus" href="#"
+                      ><i class="fa fa-google-plus"></i> Google Plus</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Error Message Display -->
+              <div
+                id="error-message"
+                style="color: red; display: none; margin-top: 10px"
+              ></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document
+        .getElementById("registerBtn")
+        .addEventListener("click", function () {
+          var name = document.getElementById("name").value;
+          var email = document.getElementById("email").value;
+          var password = document.getElementById("password").value;
+          var confirmPassword =
+            document.getElementById("confirmPassword").value;
+          var errorMsg = document.getElementById("error-message");
+          errorMsg.style.display = "none";
+          errorMsg.innerText = "";
+
+          if (!name || !email || !password || !confirmPassword) {
+            showError("All fields are required.");
+            return;
+          }
+          if (password !== confirmPassword) {
+            showError("Passwords do not match.");
+            return;
+          }
+          if (password.length < 8) {
+            showError("Password must be at least 8 characters long.");
+            return;
+          }
+
+          console.log("Sending registration data:", { name, email, password });
+
+          fetch("http://localhost:5000/signup", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, email, password }),
+          })
+            .then((response) => {
+              if (!response.ok) throw new Error("Network response was not ok");
+              return response.json();
+            })
+            .then((data) => {
+              console.log("Full API Response:", data);
+              if (data.message === "Registration Successful") {
+                window.location.href = "login.html";
+              } else {
+                showError(
+                  data.error ? data.error.message : "Registration failed."
+                );
+              }
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              showError("An error occurred. Please try again later.");
+            });
+
+          function showError(message) {
+            errorMsg.style.display = "block";
+            errorMsg.innerText = message;
+          }
+        });
+    </script>
+
+    <!-- External JavaScripts -->
+    <script src="assets/vendors/bootstrap/js/popper.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+    <script src="assets/vendors/magnific-popup/magnific-popup.js"></script>
+    <script src="assets/vendors/counter/waypoints-min.js"></script>
+    <script src="assets/vendors/counter/counterup.min.js"></script>
+    <script src="assets/vendors/imagesloaded/imagesloaded.js"></script>
+    <script src="assets/vendors/masonry/masonry.js"></script>
+    <script src="assets/vendors/masonry/filter.js"></script>
+    <script src="assets/vendors/owl-carousel/owl.carousel.js"></script>
+    <script src="assets/js/functions.js"></script>
+    <script src="assets/js/contact.js"></script>
+    <script src="assets/vendors/switcher/switcher.js"></script>
+  </body>
+</html>
