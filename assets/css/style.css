@@ -1935,7 +1935,8 @@ button.back-to-top {
 	box-shadow: none;
 }
 .recent-news.blog-lg .info-bx{
-	border:0;
+	
+
 	padding: 20px 0 0 0;
 }
 .blog-post .post-title,
@@ -1948,7 +1949,7 @@ button.back-to-top {
 }
 .recent-news .info-bx{
 	padding: 20px;	
-    border: 1px solid #EEEEEE;
+
 }
 .comments-bx{
 	margin-left:auto;
