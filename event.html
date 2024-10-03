@@ -197,63 +197,8 @@
 					</div>
 					<div class="clearfix">
 					
-                <ul id="masonry" class="ttr-gallery-listing magnific-image row">
-                    <?php
-					$servername = "localhost";
-					$username = "root"; // Set your username
-					$password = ""; // Set your password
-					$dbname = "admin";
-					
-					$conn = new mysqli($servername, $username, $password, $dbname);
-				// SQL query to fetch data from the 'topexams' table
-	               $sql = "SELECT * FROM events";
-	                $result = $conn->query($sql);
+       
 
-   
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                // Extract event date for formatting
-                $eventDate = date_create($row['event_date']);
-                $eventDay = $eventDate->format("d");
-                $eventMonth = $eventDate->format("F");
-
-                // Determine event status based on the current date
-                $currentDate = new DateTime();
-                $eventDateTime = new DateTime($row['event_date']);
-                $eventClass = $eventDateTime > $currentDate ? 'upcoming' : 'expired';
-
-                echo '<li class="action-card col-lg-6 col-md-6 col-sm-12 ' . $eventClass . '">';
-                echo '<div class="event-bx m-b30">';
-                echo '<div class="action-box">';
-                // Debugging: Added a border to the image for visibility
-                echo '<img src="' . $row['event_image'] . '" alt="Event Image" style="border: 1px solid red;">';
-                echo '</div>';
-                echo '<div class="info-bx d-flex">';
-                echo '<div>';
-                echo '<div class="event-time">';
-                echo '<div class="event-date">' . $eventDay . '</div>';
-                echo '<div class="event-month">' . $eventMonth . '</div>';
-                echo '</div>';
-                echo '</div>';
-                echo '<div class="event-info">';
-                echo '<h4 class="event-title"><a href="#">' . $row['event_title'] . '</a></h4>';
-                echo '<ul class="media-post">';
-                echo '<li><a href="#"><i class="fa fa-clock-o"></i> ' . $row['event_time_start'] . ' - ' . $row['event_time_end'] . '</a></li>';
-                echo '<li><a href="#"><i class="fa fa-map-marker"></i> ' . $row['event_location'] . '</a></li>';
-                echo '</ul>';
-                echo '<p>' . $row['event_description'] . '</p>';
-                echo '</div>';
-                echo '</div>';
-                echo '</div>'; // Close event-bx
-                echo '</li>'; // Close action-card
-            }
-        } else {
-            echo '<p>No events available</p>';
-        }
-        ?>
-    </ul>
-</div>
-                </ul>
             </div>
         </div>
     </div>
@@ -401,7 +346,7 @@
 					</div>
 				</div>
 			</div>
-        </div>
+		</div>
 		<!-- contact area END -->
     </div>
     <!-- Content END-->
