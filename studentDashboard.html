@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for Icons -->
+    <style>
+        body {
+            display: flex;
+            flex-direction: row; /* Align items in a row */
+            height: 100vh; /* Full height of the viewport */
+            overflow: hidden; /* Prevent overflow */
+        }
+
+        .sidebar {
+            min-width: 250px; /* Fixed width for sidebar */
+            background-color: #f8f9fa; /* Light background for sidebar */
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+        }
+
+        .profile-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid #007bff; /* Profile border color */
+        }
+
+        .logout-button {
+            width: 100%; /* Full width for logout button */
+            margin-top: 20px; /* Space above button */
+        }
+
+        .content {
+            flex-grow: 1; /* Allow content to grow */
+            padding: 20px; /* Padding for content */
+            overflow-y: auto; /* Scrollable if content overflows */
+        }
+
+        .nav-icon {
+            margin-right: 10px; /* Space between icon and text */
+        }
+
+        .button-style {
+            display: inline-block; /* Inline-block for button styling */
+            border: 2px solid transparent; /* Border */
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px 15px; /* Padding for button */
+            color: #007bff; /* Text color */
+            text-decoration: none; /* Remove underline */
+            margin: 5px; /* Margin between buttons */
+            transition: background-color 0.3s, border-color 0.3s; /* Transition for hover effect */
+        }
+
+        .button-style:hover {
+            background-color: #e7f1ff; /* Light blue on hover */
+            border-color: #007bff; /* Blue border on hover */
+        }
+
+        .button-style:active {
+            background-color: #007bff; /* Blue background on click */
+            color: white; /* White text on click */
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column; /* Stack items vertically on smaller screens */
+            }
+
+            .sidebar {
+                min-width: 100%; /* Full width for sidebar on mobile */
+                box-shadow: none; /* Remove shadow on mobile */
+                position: static; /* Make sidebar static */
+                padding: 10px 0; /* Adjust padding for mobile */
+            }
+
+            .sidebar ul {
+                display: flex; /* Use flex for inline display */
+                flex-wrap: nowrap; /* Prevent wrapping to new lines */
+                justify-content: flex-start; /* Align items to the start */
+                padding-left: 0; /* Remove padding */
+                list-style: none; /* Remove default list styles */
+                margin: 0; /* Remove margin */
+                overflow-x: auto; /* Horizontal scroll if items overflow */
+                white-space: nowrap; /* Prevent wrapping of items */
+            }
+
+            .sidebar ul li {
+                flex: 0 0 auto; /* Prevent flex items from growing or shrinking */
+            }
+
+            .sidebar h5 {
+                display: block; /* Ensure name is displayed in mobile */
+                margin: 10px 0; /* Margin around the name */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="text-center">
+            <img src="https://via.placeholder.com/80" alt="Profile Icon" class="profile-icon">
+            <h5 class="mt-2" data-toggle="modal" data-target="#profileModal" style="cursor: pointer;">John Doe</h5>
+        </div>
+        <hr>
+        <ul class="list-unstyled">
+            <li><a href="#" class="text-decoration-none button-style"><i class="fas fa-user nav-icon"></i>Your Profile</a></li>
+            <li><a href="#" class="text-decoration-none button-style"><i class="fas fa-university nav-icon"></i>Applied Colleges</a></li>
+            <li><a href="#" class="text-decoration-none button-style"><i class="fas fa-star nav-icon"></i>Your Reviews</a></li>
+            <li><a href="#" class="text-decoration-none button-style"><i class="fas fa-file nav-icon"></i>Applied CAF</a></li>
+            <li><a href="#" class="text-decoration-none button-style"><i class="fas fa-clock nav-icon"></i>Pending Applications</a></li>
+            <li><a href="#" class="text-decoration-none button-style"><i class="fas fa-cog nav-icon"></i>Account Settings</a></li>
+        </ul>
+        <hr>
+        <a href="#" class="btn btn-danger logout-button">Logout</a>
+    </div>
+    <div class="content">
+        <h3 class="text-center">Dashboard Details</h3>
+        <p>Your detailed information will be displayed here.</p>
+        <!-- Add additional content here -->
+    </div>
+
+    <!-- Modal for Profile Information -->
+    <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="profileModalLabel">Profile Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Name: John Doe</p>
+                    <p>Email: johndoe@example.com</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Address: 123 Main St, Anytown, USA</p>
+                    <!-- Add more profile information as needed -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

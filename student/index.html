@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- META ============================================= -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />
+
+    <!-- DESCRIPTION -->
+    <meta name="description" content="Badastep" />
+
+    <!-- OG -->
+    <meta property="og:title" content="Badastep" />
+    <meta property="og:description" content="Badastep" />
+    <meta property="og:image" content="" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- FAVICONS ICON ============================================= -->
+    <link rel="icon" href="../error-404.html" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/images/finallogo.png"
+    />
+
+    <!-- PAGE TITLE HERE ============================================= -->
+    <title>Badastep</title>
+
+    <!-- MOBILE SPECIFIC ============================================= -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.min.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- All PLUGINS CSS ============================================= -->
+    <link rel="stylesheet" type="text/css" href="assets/css/assets.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/vendors/calendar/fullcalendar.css"
+    />
+
+    <!-- TYPOGRAPHY ============================================= -->
+    <link rel="stylesheet" type="text/css" href="assets/css/typography.css" />
+
+    <!-- SHORTCODES ============================================= -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/shortcodes/shortcodes.css"
+    />
+
+    <!-- STYLESHEETS ============================================= -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/dashboard.css" />
+    <link
+      class="skin"
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/color/color-1.css"
+    />
+    <style>
+      a {
+        text-decoration: none;
+      }
+ 
+        .step {
+            cursor: pointer;
+        }
+
+        .step.active {
+            font-weight: bold;
+            color: orange;
+        }
+        .card-body h5 {
+    margin-bottom: 20px;
+}
+
+.input-group-text {
+    background-color: #f5f5f5; /* Light background for icons */
+    border-right: none;
+}
+
+.form-control {
+    border-left: none; /* Removing left border for better alignment */
+}
+
+.input-group .form-control {
+    border-radius: 0 5px 5px 0; /* Consistent rounded corners */
+}
+
+
+
+ 
+    </style>
+  </head>
+  <body class="ttr-opened-sidebar ttr-pinned-sidebar">
+    <!-- header start -->
+    <header class="ttr-header">
+      <div class="ttr-header-wrapper">
+        <!--sidebar menu toggler start -->
+        <div class="ttr-toggle-sidebar ttr-material-button">
+          <i class="ti-close ttr-open-icon"></i>
+          <i class="ti-menu ttr-close-icon"></i>
+        </div>
+        <!--sidebar menu toggler end -->
+        <!--logo start -->
+        <div class="ttr-logo-box">
+          <div>
+            <a href="index.html" class="ttr-logo">
+              <img
+                class="ttr-logo-mobile"
+                alt=""
+                src="assets/images/finallogo.png"
+                width="30"
+                height="30"
+              />
+              <img
+                class="ttr-logo-desktop"
+                alt=""
+                src="assets/images/finallogo.png"
+                width="90"
+                height="70"
+              />
+            </a>
+          </div>
+        </div>
+        <!--logo end -->
+        <div class="ttr-header-menu">
+          <!-- header left menu start -->
+          <ul class="ttr-header-navigation">
+            <li>
+              <a
+                href="index.html"
+                class="ttr-material-button ttr-submenu-toggle"
+                >HOME</a
+              >
+              <!-- <a href="../index.html" class="ttr-material-button ttr-submenu-toggle">HOME</a> -->
+            </li>
+          </ul>
+          <!-- header left menu end -->
+        </div>
+        <div class="ttr-header-right ttr-with-seperator">
+          <!-- header right menu start -->
+          <ul class="ttr-header-navigation">
+            <li>
+              <a href="#" class="ttr-material-button ttr-search-toggle"
+                ><i class="fa fa-search"></i
+              ></a>
+            </li>
+            <li>
+              <a href="#" class="ttr-material-button ttr-submenu-toggle"
+                ><i class="fa fa-bell"></i
+              ></a>
+              <div class="ttr-header-submenu noti-menu">
+                <div class="ttr-notify-header">
+                  <span class="ttr-notify-text-top">9 New</span>
+                  <span class="ttr-notify-text">User Notifications</span>
+                </div>
+                <div class="noti-box-list">
+                  <ul>
+                    <li>
+                      <span class="notification-icon dashbg-gray">
+                        <i class="fa fa-check"></i>
+                      </span>
+                      <span class="notification-text">
+                        <span>Sneha Jogi</span> sent you a message.
+                      </span>
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a>
+                        <span> 02:14</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="notification-icon dashbg-yellow">
+                        <i class="fa fa-shopping-cart"></i>
+                      </span>
+                      <span class="notification-text">
+                        <a href="#">Your order is placed</a> sent you a message.
+                      </span>
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a>
+                        <span> 7 Min</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="notification-icon dashbg-red">
+                        <i class="fa fa-bullhorn"></i>
+                      </span>
+                      <span class="notification-text">
+                        <span>Your item is shipped</span> sent you a message.
+                      </span>
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a>
+                        <span> 2 May</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="notification-icon dashbg-green">
+                        <i class="fa fa-comments-o"></i>
+                      </span>
+                      <span class="notification-text">
+                        <a href="#">Sneha Jogi</a> sent you a message.
+                      </span>
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a>
+                        <span> 14 July</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="notification-icon dashbg-primary">
+                        <i class="fa fa-file-word-o"></i>
+                      </span>
+                      <span class="notification-text">
+                        <span>Sneha Jogi</span> sent you a message.
+                      </span>
+                      <span class="notification-time">
+                        <a href="#" class="fa fa-close"></a>
+                        <span> 15 Min</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#" class="ttr-material-button ttr-submenu-toggle"
+                ><span class="ttr-user-avatar"
+                  ><img
+                    alt=""
+                    src="assets/images/testimonials/pic5.png"
+                    width="32"
+                    height="32" /></span
+              ></a>
+              <div class="ttr-header-submenu">
+                <ul>
+                  <!-- <li><a href="adminprofile.html">My profile</a></li> -->
+                  <!-- <li><a href="list-view-calendar.html">Activity</a></li> -->
+                  <li><a href="enquiry.html">Messages</a></li>
+                  <li><a href="adminlogin.html">Logout</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <!-- header right menu end -->
+        </div>
+        <!--header search panel start -->
+        <div class="ttr-search-bar">
+          <form class="ttr-search-form">
+            <div class="ttr-search-input-wrapper">
+              <input
+                type="text"
+                name="qq"
+                placeholder="search something..."
+                class="ttr-search-input"
+              />
+              <button type="submit" name="search" class="ttr-search-submit">
+                <i class="ti-arrow-right"></i>
+              </button>
+            </div>
+            <span class="ttr-search-close ttr-search-toggle">
+              <i class="ti-close"></i>
+            </span>
+          </form>
+        </div>
+        <!--header search panel end -->
+      </div>
+    </header>
+    <!-- header end -->
+    <!-- Left sidebar menu start -->
+    <div class="ttr-sidebar">
+      <div class="ttr-sidebar-wrapper content-scroll">
+        <!-- side menu logo start -->
+        <div class="ttr-sidebar-logo" style="border: none">
+          <a href="#"
+            ><img
+              alt=""
+              src="assets/images/final-logo.png"
+              width="112"
+              height=""
+            /><strong>BADASTEP</strong></a
+          >
+          <div class="ttr-sidebar-toggle-button">
+            <i class="ti-arrow-left"></i>
+          </div>
+        </div>
+        <!-- side menu logo end -->
+        <!-- sidebar menu start -->
+        <nav class="ttr-sidebar-navi">
+          <ul>
+            <li>
+              <a href="index.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-user"></i></span>
+                <span class="ttr-label">Your Profile</span>
+              </a>
+            </li>
+            <li>
+              <a href="organization.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-comment-alt"></i></span>
+                <span class="ttr-label">Applied colleges</span>
+              </a>
+            </li>
+            <li>
+              <a href="ranking.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-crown"></i></span>
+                <span class="ttr-label">Your Reviews</span>
+              </a>
+            </li>
+            <li>
+              <a href="topcolleges.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-book"></i></span>
+                <span class="ttr-label">Applied CAF</span>
+              </a>
+            </li>
+            <li>
+              <a href="gallery-category.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-time"></i></span>
+                <span class="ttr-label">Pending Application</span>
+              </a>
+            </li>
+            <li>
+              <a href="gallery.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-settings"></i></span>
+                <span class="ttr-label">Account Sessings</span>
+              </a>
+            </li>
+        </nav>
+	  </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="container" style="margin-top: 100px;">
+      <!-- Step Progress Bar -->
+      <div class="row mb-4">
+          <div class="col text-center step active" id="step1">1. Your Details</div>
+          <div class="col text-center step" id="step2">2. Education Details</div>
+          <div class="col text-center step" id="step3">3. Desired Colleges</div>
+          <div class="col text-center step" id="step4">4. Professional Experience</div>
+      </div>
+    
+      <!-- Step 1: Your Details -->
+      <div id="form-step-1" class="step-content">
+        <h4>Your Details</h4>
+        <form>
+            <!-- Row 1: Describes You and Describe You Best -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="description" class="form-label">What Currently Describes You Best?</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="ti-info-alt"></i></span>
+                        <select class="form-select" style="width: 100%;" id="description">
+                            <option selected disabled>Choose...</option>
+                            <option value="Interested in Indian Colleges">Interested in Indian Colleges</option>
+                            <option value="Interested in Abroad Colleges">Interested in Abroad Colleges</option>
+                            <option value="Both">Both</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="best-description" class="form-label">What Describe You the Best?</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="ti-tag"></i></span>
+                        <select class="form-select" id="best-description">
+                            <option selected disabled>Choose...</option>
+                            <option value="Looking for Admission">Looking for Admission [Aspirant]</option>
+                            <option value="Graduate Student">Graduate Student</option>
+                            <option value="Post Graduate Student">Post Graduate Student</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Row 2: Full Name and Email -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="full-name" class="form-label">Full Name</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="ti-user"></i></span>
+                        <input type="text" class="form-control" id="full-name" placeholder="Your Full Name">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="ti-email"></i></span>
+                        <input type="email" class="form-control" id="email" placeholder="Enter Your Email">
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Row 3: Mobile Number and Gender -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="mobile" class="form-label">Mobile Number</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="ti-mobile"></i></span>
+                        <input type="text" class="form-control" id="mobile" placeholder="Enter Your Mobile Number">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="gender" class="form-label">Gender</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="ti-face-smile"></i></span>
+                        <select class="form-select" id="gender">
+                            <option selected disabled>Choose...</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Row 4: City and Course Interest -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="city" class="form-label">City You Live In</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="ti-location-pin"></i></span>
+                        <input type="text" class="form-control" id="city" placeholder="Your City">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="course-interest" class="form-label">Course Interest</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="ti-book"></i></span>
+                        <select class="form-select" id="course-interest">
+                            <option selected disabled>Choose...</option>
+                            <option value="Computer Science">Computer Science</option>
+                            <option value="Business Management">Business Management</option>
+                            <option value="Engineering">Engineering</option>
+                            <option value="Medical">Medical</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Submit Button -->
+            <button type="button" class="btn btn-primary" id="next1">Save and Next</button>
+        </form>
+    </div>
+    
+      <!-- Step 2: Education Details -->
+      <div id="form-step-2" class="step-content d-none">
+        <h4>Education Details</h4>
+        <form>
+            <!-- Graduation Details -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5>Graduation Educational Details</h5>
+                    <div class="mb-3">
+                        <label for="grad-institute" class="form-label">Institute Name</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="ti-home"></i></span>
+                            <input type="text" class="form-control" id="grad-institute" placeholder="Institute Name">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="grad-year" class="form-label">Grad Passing Year</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="ti-calendar"></i></span>
+                            <input type="text" class="form-control" id="grad-year" placeholder="Passing Year">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="grad-grading" class="form-label">Grading System</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="ti-book"></i></span>
+                                <input type="text" class="form-control" id="grad-grading" placeholder="Percentage/CGPA">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="grad-percentage" class="form-label">Percentage/Grade</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="ti-bar-chart"></i></span>
+                                <input type="text" class="form-control" id="grad-percentage" placeholder="Percentage/Grade">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="grad-course" class="form-label">Graduation Course</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="ti-bookmark"></i></span>
+                            <input type="text" class="form-control" id="grad-course" placeholder="Course Name">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- 12th Educational Details -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5>12th Educational Details</h5>
+                    <div class="mb-3">
+                        <label for="12th-school" class="form-label">School Name</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="ti-home"></i></span>
+                            <input type="text" class="form-control" id="12th-school" placeholder="School Name">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="12th-city" class="form-label">City</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="ti-location-pin"></i></span>
+                            <input type="text" class="form-control" id="12th-city" placeholder="City">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="12th-year" class="form-label">12th Passing Year</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="ti-calendar"></i></span>
+                            <input type="text" class="form-control" id="12th-year" placeholder="Passing Year">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="12th-grading" class="form-label">Grading System</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="ti-book"></i></span>
+                            <input type="text" class="form-control" id="12th-grading" placeholder="Percentage/CGPA">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="12th-percentage" class="form-label">Percentage/Grade</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="ti-bar-chart"></i></span>
+                            <input type="text" class="form-control" id="12th-percentage" placeholder="Percentage/Grade">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="12th-course" class="form-label">12th Course</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="ti-bookmark"></i></span>
+                            <input type="text" class="form-control" id="12th-course" placeholder="Course Name">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Row: Submit Button -->
+            <button type="button" class="btn btn-primary" id="next2">Save and Next</button>
+        </form>
+      </div>
+    
+      <!-- Step 3: Desired Colleges -->
+      <div id="form-step-3" class="step-content d-none">
+        <h4>Desired Colleges</h4>
+        <form>
+            <!-- Row: Desired College 1 -->
+            <div class="mb-3">
+                <label for="college-1" class="form-label">1st Desired College</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="ti-home"></i></span>
+                    <input type="text" class="form-control" id="college-1" placeholder="Enter 1st Desired College Name">
+                </div>
+            </div>
+            <!-- Row: Desired College 2 -->
+            <div class="mb-3">
+                <label for="college-2" class="form-label">2nd Desired College</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="ti-home"></i></span>
+                    <input type="text" class="form-control" id="college-2" placeholder="Enter 2nd Desired College Name">
+                </div>
+            </div>
+            <!-- Row: Desired College 3 -->
+            <div class="mb-3">
+                <label for="college-3" class="form-label">3rd Desired College</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="ti-home"></i></span>
+                    <input type="text" class="form-control" id="college-3" placeholder="Enter 3rd Desired College Name">
+                </div>
+            </div>
+            <!-- Submit Button -->
+            <button type="button" class="btn btn-primary" id="next3">Save and Next</button>
+        </form>
+      </div>
+    
+      <!-- Step 4: Professional Experience -->
+      <div id="form-step-4" class="step-content d-none">
+        <h4>Professional Experience</h4>
+        <form>
+            <!-- Row: Company Name -->
+            <div class="mb-3">
+                <label for="company-name" class="form-label">Company Name</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="ti-briefcase"></i></span>
+                    <input type="text" class="form-control" id="company-name" placeholder="Enter Company Name">
+                </div>
+            </div>
+            <!-- Row: Job Title -->
+            <div class="mb-3">
+                <label for="job-title" class="form-label">Job Title</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="ti-tag"></i></span>
+                    <input type="text" class="form-control" id="job-title" placeholder="Enter Job Title">
+                </div>
+            </div>
+            <!-- Row: Start Date -->
+            <div class="mb-3">
+                <label for="start-date" class="form-label">Start Date</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="ti-calendar"></i></span>
+                    <input type="date" class="form-control" id="start-date">
+                </div>
+            </div>
+            <!-- Row: End Date -->
+            <div class="mb-3">
+                <label for="end-date" class="form-label">End Date</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="ti-calendar"></i></span>
+                    <input type="date" class="form-control" id="end-date">
+                </div>
+            </div>
+            <!-- Row: Responsibilities -->
+            <div class="mb-3">
+                <label for="responsibilities" class="form-label">Key Responsibilities</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="ti-pencil"></i></span>
+                    <textarea class="form-control" id="responsibilities" rows="3" placeholder="Describe your responsibilities..."></textarea>
+                </div>
+            </div>
+            <!-- Submit Button -->
+            <button type="button" class="btn btn-primary" id="submit">Submit</button>
+        </form>
+      </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+      // Script for handling the step-by-step form
+      $(document).ready(function() {
+          $('.step').click(function() {
+              var stepId = $(this).attr('id');
+              var stepNumber = stepId.replace('step', '');
+  
+              // Activate the clicked step
+              $('.step').removeClass('active');
+              $(this).addClass('active');
+  
+              // Show the corresponding form step
+              $('.step-content').addClass('d-none');
+              $('#form-step-' + stepNumber).removeClass('d-none');
+          });
+  
+          // Handle the Next button clicks
+          $('#next1').click(function() {
+              $('#step2').click();
+          });
+  
+          $('#next2').click(function() {
+              $('#step3').click();
+          });
+  
+          $('#next3').click(function() {
+              $('#step4').click();
+          });
+      });
+  </script>
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let count = 1;
+
+      // Function to show/hide status and date fields based on college selection
+      document.getElementById('collegeSelect').addEventListener('change', function () {
+        const statusSelect = this.parentElement.querySelector('#statusSelect');
+        const statusDate = this.parentElement.querySelector('#statusDate');
+        if (this.value !== 'Select College') {
+          statusSelect.classList.remove('d-none');
+        } else {
+          statusSelect.classList.add('d-none');
+          statusDate.classList.add('d-none');
+        }
+      });
+
+      // Function to show/hide date field based on status selection
+      document.getElementById('statusSelect').addEventListener('change', function () {
+        const statusDate = this.parentElement.querySelector('#statusDate');
+        if (this.value !== 'Select Status') {
+          statusDate.classList.remove('d-none');
+        } else {
+          statusDate.classList.add('d-none');
+        }
+      });
+
+      // Function to add more college fields
+      document.getElementById('addMore').addEventListener('click', function () {
+        count++;
+        const collegeBox = document.createElement('div');
+        collegeBox.className = 'form-box mb-3 position-relative';
+        collegeBox.innerHTML = `
+          <div class="btn-move">&#x21E7;</div>
+          <div class="btn-move">&#x21E9;</div>
+          <span class="position-absolute top-0 start-0 p-2 text-muted">${count}</span>
+          <select class="form-select my-2" aria-label="Select College">
+            <option selected>Select College</option>
+            <option value="IIT Bombay">IIT Bombay</option>
+            <option value="IIT Delhi">IIT Delhi</option>
+            <option value="IIT Madras">IIT Madras</option>
+            <option value="IIM Bangalore">IIM Bangalore</option>
+            <option value="IIM Ahmedabad">IIM Ahmedabad</option>
+          </select>
+          <select class="form-select my-2 d-none" aria-label="Select Status">
+            <option selected>Select Status</option>
+            <option value="Applied">Applied</option>
+            <option value="Interested">Interested</option>
+            <option value="In Selection">In Selection</option>
+          </select>
+          <input type="date" class="form-control my-2 d-none" placeholder="Select Date">
+          <span class="btn-delete">&#x1F5D1;</span>
+        `;
+        document.getElementById('college-list').appendChild(collegeBox);
+
+        // Attach event listeners to the new elements
+        collegeBox.querySelector('select[aria-label="Select College"]').addEventListener('change', function () {
+          const statusSelect = this.parentElement.querySelector('select[aria-label="Select Status"]');
+          const statusDate = this.parentElement.querySelector('input[type="date"]');
+          if (this.value !== 'Select College') {
+            statusSelect.classList.remove('d-none');
+          } else {
+            statusSelect.classList.add('d-none');
+            statusDate.classList.add('d-none');
+          }
+        });
+
+        collegeBox.querySelector('select[aria-label="Select Status"]').addEventListener('change', function () {
+          const statusDate = this.parentElement.querySelector('input[type="date"]');
+          if (this.value !== 'Select Status') {
+            statusDate.classList.remove('d-none');
+          } else {
+            statusDate.classList.add('d-none');
+          }
+        });
+
+        collegeBox.querySelector('.btn-delete').addEventListener('click', function () {
+          this.parentElement.remove();
+        });
+      });
+
+      // Delete button functionality
+      document.querySelectorAll('.btn-delete').forEach(button => {
+        button.addEventListener('click', function () {
+          this.parentElement.remove();
+        });
+      });
+    });
+  </script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/popper.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+    <script src="assets/vendors/magnific-popup/magnific-popup.js"></script>
+    <script src="assets/vendors/counter/waypoints-min.js"></script>
+    <script src="assets/vendors/counter/counterup.min.js"></script>
+    <script src="assets/vendors/imagesloaded/imagesloaded.js"></script>
+    <script src="assets/vendors/masonry/masonry.js"></script>
+    <script src="assets/vendors/masonry/filter.js"></script>
+    <script src="assets/vendors/owl-carousel/owl.carousel.js"></script>
+    <script src="assets/vendors/scroll/scrollbar.min.js"></script>
+    <script src="assets/js/functions.js"></script>
+    <script src="assets/vendors/chart/chart.min.js"></script>
+    <script src="assets/js/admin.js"></script>
+    <script src="assets/vendors/calendar/moment.min.js"></script>
+    <script src="assets/vendors/calendar/fullcalendar.js"></script>
+    <script src="assets/vendors/switcher/switcher.js"></script>
+  </body>
+</html>

@@ -1,116 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrance Exams in India</title>
+    <title>Your Applied Colleges</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f4fc;
-            margin: 0;
-            padding: 0;
+        .empty-state {
+            text-align: center;
+            margin-top: 50px;
         }
-
-        .banner-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: linear-gradient(to right, #f0f4fc, #ffffff);
-            padding: 50px;
-        }
-
-        .banner-content {
-            max-width: 50%;
-        }
-
-        .banner-heading {
-            font-size: 36px;
-            font-weight: 700;
-            color: #0d1a26;
-            margin: 0 0 20px;
-        }
-
-        .search-container {
-            display: flex;
-            align-items: center;
-            max-width: 600px;
-            margin-bottom: 20px;
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 25px;
-            font-size: 16px;
-            outline: none;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .search-icon {
-            position: relative;
-            left: -40px;
-            color: #888;
-        }
-
-        .exam-links {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .exam-links li {
-            display: inline;
-            margin: 0 10px;
-        }
-
-        .exam-links a {
-            text-decoration: none;
-            color: #3455db;
-            font-size: 14px;
-        }
-
-        .exam-links a:hover {
-            text-decoration: underline;
-        }
-
-        .banner-image {
-            max-width: 40%;
-        }
-
-        .banner-image img {
-            width: 100%;
+        .btn-browse {
+            background-color: #a0522d; /* Brown color for the button */
+            color: white;
         }
     </style>
 </head>
-
 <body>
-    <div class="banner-section">
-        <div class="banner-content">
-            <h1 class="banner-heading">Entrance Exams In India</h1>
-            <div class="search-container">
-                <input type="text" class="search-input" placeholder="Search Entrance Exams">
-                <span class="search-icon">&#128269;</span>
-            </div>
-            <ul class="exam-links">
-                <li><a href="#">JEE MAIN</a></li>
-                <li><a href="#">NEET</a></li>
-                <li><a href="#">CAT</a></li>
-                <li><a href="#">GATE</a></li>
-                <li><a href="#">CLAT</a></li>
-                <li><a href="#">JEE ADVANCED</a></li>
-                <li><a href="#">COMEDK UGET</a></li>
-                <li><a href="#">AP EAPCET</a></li>
-                <li><a href="#">WBJEE</a></li>
-                <li><a href="#">KCET</a></li>
-            </ul>
-        </div>
-        <div class="banner-image">
-            <img src="../assets/images/study/7618695-removebg-preview.png" alt="Student Studying Illustration">
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 empty-state">
+            <h2>Your Applied Colleges</h2>
+            <p>Nothing to show yet. You haven't applied to any colleges.</p>
+            <img src="image.png" alt="No Colleges" class="img-fluid" style="max-width: 300px;">
+            <br>
+            <a href="#" class="btn btn-browse">Browse Colleges</a>
         </div>
     </div>
-</body>
+</div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
