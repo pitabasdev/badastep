@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />
+    <meta name="description" content="BadaStep Website" />
+
+    <meta property="og:title" content="BadaStep Website" />
+    <meta property="og:description" content="BadaStep Website" />
+    <meta property="og:image" content="" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <link rel="icon" href="assets/images/final-logo.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/images/final-logo.png"
+    />
+    <title>BadaStep Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" type="text/css" href="assets/css/assets.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/typography.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/shortcodes/shortcodes.css"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link
+      class="skin"
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/color/color-1.css"
+    />
+  </head>
+
+  <body id="bg">
+    <div class="page-wraper">
+      <div id="loading-icon-bx"></div>
+      <div class="account-form">
+        <div
+          class="account-head"
+          style="background-image: url(assets/images/background/bg2.jpg)"
+        >
+          <a href="index.html"
+            ><img src="assets/images/final-logo.png" alt=""
+          /></a>
+        </div>
+        <div class="account-form-inner">
+          <div class="account-container">
+            <div class="heading-bx left">
+              <h2 class="title-head">Admin Login <span>Account</span></h2>
+              <p>
+                Don't have an account?
+                <a href="admin">Contact To Admin</a>
+              </p>
+            </div>
+            <div class="col-lg-12">
+              <div id="error-message" style="color: red; display: none"></div>
+            </div>
+            <form class="contact-bx" id="loginForm">
+              <div class="row placeani">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <label>Your Email</label>
+                      <input
+                        name="dzName"
+                        type="email"
+                        required=""
+                        id="email"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <label>Your Password</label>
+                      <input
+                        id="password"
+                        name="dzPassword"
+                        type="password"
+                        class="form-control"
+                        required=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 m-b30">
+                  <button type="button" id="submitBtn" class="btn button-md">
+                    Login
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("submitBtn").addEventListener("click", function () {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var errorMsg = document.getElementById("error-message");
+        if (errorMsg) {
+          errorMsg.style.display = "none";
+          errorMsg.innerText = "";
+        }
+        if (!email || !password) {
+          if (errorMsg) {
+            errorMsg.style.display = "block";
+            errorMsg.innerText = "Please fill in both fields.";
+          }
+          return;
+        }
+        if (password.length < 8) {
+          if (errorMsg) {
+            errorMsg.style.display = "block";
+            errorMsg.innerText = "Password must be at least 8 characters long.";
+          }
+          return;
+        }
+        fetch("http://localhost:5000/adminLogin", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email,
+            password: password,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("Full API Response:", data); // Log the entire response
+            console.log("Type of data:", typeof data); // Log the type of the response object
+            console.log("Message field value:", data.message); // Log the message field value
+            if (data.message === "Login Successfully") {
+              window.location.href = "index.html";
+            } else {
+              if (errorMsg) {
+                errorMsg.style.display = "block";
+                if (data.message === "Invalid email or password") {
+                  errorMsg.innerText = "Incorrect email or password. Please try again.";
+                } else {
+                  errorMsg.innerText = "Authentication failed. Please try again.";
+                }
+              }
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            if (errorMsg) {
+              errorMsg.style.display = "block";
+              errorMsg.innerText = "An error occurred. Please try again later.";
+            }
+          });
+      });
+    </script>
+    
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/popper.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+    <script src="assets/vendors/magnific-popup/magnific-popup.js"></script>
+    <script src="assets/vendors/counter/waypoints-min.js"></script>
+    <script src="assets/vendors/counter/counterup.min.js"></script>
+    <script src="assets/vendors/imagesloaded/imagesloaded.js"></script>
+    <script src="assets/vendors/masonry/masonry.js"></script>
+    <script src="assets/vendors/masonry/filter.js"></script>
+    <script src="assets/vendors/owl-carousel/owl.carousel.js"></script>
+    <script src="assets/js/functions.js"></script>
+    <script src="assets/js/contact.js"></script>
+    <script src="assets/vendors/switcher/switcher.js"></script>
+  </body>
+</html>
