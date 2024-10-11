@@ -74,35 +74,42 @@
             align-items: center;
         }
         .card {
-            padding: 20px;
+            padding: 30px;
             border-radius: 5px;
-            width: 1800px; /* Increased width */
+            width: 600px; /* Card width */
             background: white;
-            border: none;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            border: none;
         }
         h2 {
-            text-align: left; /* Align heading to the left */
+            text-align: left; /* Left-align heading */
+            font-size: 1.5rem;
+            font-weight: 600;
             margin-bottom: 20px; /* Space below the heading */
         }
-        .btn-browse {
-            color: white;
-            width: 200px;
+        .settings-box {
+            border: 1px solid #dee2e6;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px; /* Space below the settings box */
+        }
+        .toggle-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px; /* Space between toggle sections */
+        }
+        .deactivate-container {
+            text-align: center; /* Center text */
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .btn-deactivate {
             padding: 10px 20px;
-            font-size: 16px;
-            margin: 20px auto; /* Center the image */
-            display: block;
-            text-decoration: none; /* Remove underline from link */
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
         }
-        .empty-state-img {
-            width: 100%; /* Responsive image */
-            max-width: 300px; /* Max width to control size */
-            margin: 20px auto; /* Center the image */
-            display: block; /* Make image a block element for centering */
-        }
-
-
  
     </style>
   </head>
@@ -307,23 +314,23 @@
               </a>
             </li>
             <li>
-                <a href="appliedCollege.html" class="ttr-material-button">
-                  <span class="ttr-icon"><i class="ti-comment-alt"></i></span>
-                  <span class="ttr-label">Applied colleges</span>
-                </a>
-              </li>
-              <li>
-                <a href="review.html" class="ttr-material-button">
-                  <span class="ttr-icon"><i class="ti-crown"></i></span>
-                  <span class="ttr-label">Your Reviews</span>
-                </a>
-              </li>
-              <li>
-                <a href="AppliedCAF.html" class="ttr-material-button">
-                  <span class="ttr-icon"><i class="ti-book"></i></span>
-                  <span class="ttr-label">Applied CAF</span>
-                </a>
-              </li>
+              <a href="organization.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-comment-alt"></i></span>
+                <span class="ttr-label">Applied colleges</span>
+              </a>
+            </li>
+            <li>
+              <a href="ranking.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-crown"></i></span>
+                <span class="ttr-label">Your Reviews</span>
+              </a>
+            </li>
+            <li>
+              <a href="topcolleges.html" class="ttr-material-button">
+                <span class="ttr-icon"><i class="ti-book"></i></span>
+                <span class="ttr-label">Applied CAF</span>
+              </a>
+            </li>
             <li>
               <a href="gallery-category.html" class="ttr-material-button">
                 <span class="ttr-icon"><i class="ti-time"></i></span>
@@ -343,14 +350,29 @@
 
     <div class="container">
         <div class="card">
-            <h2>Your Applied Colleges</h2>
-            <p>Nothing to show yet. You haven't applied to any colleges.</p>
-            <img src="assets/images/9318694-removebg-preview.png" alt="No Colleges" class="empty-state-img">
-            <br>
-            <a href="#" class="btn btn-browse">Browse Colleges</a>
+            <h2>Account Settings</h2>
+            
+            <div class="settings-box">
+                <div class="toggle-container">
+                    <span>Email Communications</span>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="emailToggle">
+                    </div>
+                </div>
+                <div class="toggle-container">
+                    <span>SMS Communications</span>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="smsToggle">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="deactivate-container">
+                <p>Deactivate Account?</p>
+                <button class="btn btn-deactivate">Deactivate Account</button>
+            </div>
         </div>
     </div>
-
 
 
 

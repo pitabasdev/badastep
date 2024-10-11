@@ -3,32 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Applied Colleges</title>
+    <title>Account Settings</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .empty-state {
-            text-align: center;
-            margin-top: 50px;
+        body {
+            background-color: #f7f9fc; /* Light background */
         }
-        .btn-browse {
-            background-color: #a0522d; /* Brown color for the button */
+        .container {
+            height: 100vh; /* Full height for centering */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            padding: 30px;
+            border-radius: 5px;
+            width: 600px; /* Card width */
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border: none;
+        }
+        h2 {
+            text-align: left; /* Left-align heading */
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px; /* Space below the heading */
+        }
+        .settings-box {
+            border: 1px solid #dee2e6;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px; /* Space below the settings box */
+        }
+        .toggle-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px; /* Space between toggle sections */
+        }
+        .deactivate-container {
+            text-align: center; /* Center text */
+            margin-top: 20px;
+        }
+        .btn-deactivate {
+            background-color: #dc3545; /* Button color */
             color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="row">
-        <div class="col-12 empty-state">
-            <h2>Your Applied Colleges</h2>
-            <p>Nothing to show yet. You haven't applied to any colleges.</p>
-            <img src="image.png" alt="No Colleges" class="img-fluid" style="max-width: 300px;">
-            <br>
-            <a href="#" class="btn btn-browse">Browse Colleges</a>
-        </div>
-    </div>
-</div>
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
