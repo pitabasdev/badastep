@@ -76,69 +76,135 @@
                 Apply for Your <span>Desired Job</span>
               </h2>
             </div>
-
+    
             <form action="#" method="post" enctype="multipart/form-data">
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="name">Full Name</label>
-                        <input type="text" class="form-control" id="name" name="name" required placeholder="Enter your full name" />
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="highestStudy">Highest Education</label>
-                        <select id="highestStudy" class="form-control" name="highestStudy" required>
-                            <option value="">Select your highest education</option>
-                            <option value="high_school">High School</option>
-                            <option value="bachelor">Bachelor's Degree</option>
-                            <option value="master">Master's Degree</option>
-                            <option value="phd">Ph.D.</option>
-                        </select>
-                    </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="name">Full Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="Enter your full name"
+                  />
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required placeholder="Enter your email" />
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" class="form-control" id="phone" name="phone" required placeholder="Enter your phone number" />
-                    </div>
+                <div class="form-group col-md-6">
+                  <label for="highestStudy">Highest Education</label>
+                  <select id="highestStudy" class="form-control" name="highestStudy" required>
+                    <option value="">Select your highest education</option>
+                    <option value="high_school">High School</option>
+                    <option value="bachelor">Bachelor's Degree</option>
+                    <option value="master">Master's Degree</option>
+                    <option value="phd">Ph.D.</option>
+                  </select>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="marks">Marks/Grades</label>
-                        <input type="number" class="form-control" id="marks" name="marks" required placeholder="Enter your marks/grades" />
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="position">Position Applied For</label>
-                        <select id="position" class="form-control" name="position" required>
-                            <option value="">Select a position</option>
-                            <option value="software_developer">Software Developer</option>
-                            <option value="data_scientist">Data Scientist</option>
-                            <option value="ui_ux_designer">UI/UX Designer</option>
-                            <option value="project_manager">Project Manager</option>
-                        </select>
-                    </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="Enter your email"
+                  />
                 </div>
-                <div class="form-group">
-                    <label for="skills">Skills</label>
-                    <input type="text" class="form-control" id="skills" name="skills" required placeholder="Enter your skills, separated by commas" />
+                <div class="form-group col-md-6">
+                  <label for="phone">Phone Number</label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="phone"
+                    name="phone"
+                    required
+                    placeholder="Enter your phone number"
+                  />
                 </div>
-                <div class="form-group">
-                    <label for="resume">Upload Resume</label>
-                    <input type="file" class="form-control-file" id="resume" name="resume" accept=".pdf, .doc, .docx" required />
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="marks">Marks/Grades</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="marks"
+                    name="marks"
+                    required
+                    placeholder="Enter your marks/grades"
+                  />
                 </div>
-                <div class="form-group">
-                    <label for="introduction">Introduction</label>
-                    <textarea class="form-control" id="introduction" name="introduction" rows="4" required placeholder="Write a brief introduction about yourself"></textarea>
+                <div class="form-group col-md-6">
+                  <label for="position">Position Applied For</label>
+                  <select id="position" class="form-control" name="position" required>
+                    <option value="">Select a position</option>
+                    <!-- Options will be populated here -->
+                  </select>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Submit Application</button>
+              </div>
+              <div class="form-group">
+                <label for="skills">Skills</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="skills"
+                  name="skills"
+                  required
+                  placeholder="Enter your skills, separated by commas"
+                />
+              </div>
+              <div class="form-group">
+                <label for="resume">Upload Resume</label>
+                <input
+                  type="file"
+                  class="form-control-file"
+                  id="resume"
+                  name="resume"
+                  accept=".pdf, .doc, .docx"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="introduction">Introduction</label>
+                <textarea
+                  class="form-control"
+                  id="introduction"
+                  name="introduction"
+                  rows="4"
+                  required
+                  placeholder="Write a brief introduction about yourself"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Submit Application</button>
             </form>
-            
           </div>
         </div>
       </div>
     </div>
+    
+    <script>
+      // Fetch job titles and populate the select dropdown
+      fetch('http://localhost:5000/jobs/titles')
+        .then(response => response.json())
+        .then(data => {
+          const positionSelect = document.getElementById('position');
+          
+          // Populate the select options
+          data.forEach(job => {
+            const option = document.createElement('option');
+            option.value = job._id; // Use the ID as the value
+            option.textContent = job.title; // Use the title as the display text
+            positionSelect.appendChild(option);
+          });
+        })
+        .catch(error => {
+          console.error('Error fetching job titles:', error);
+        });
+    </script>
+    
     <!-- External JavaScripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/vendors/bootstrap/js/popper.min.js"></script>

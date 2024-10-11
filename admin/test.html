@@ -3,38 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Exam API Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+        }
+        button {
+            padding: 10px 15px;
+        }
+        #response {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
 </head>
 <body>
-    <form id="jobForm">
-        <input type="text" name="title" placeholder="Job Title" required>
-        <input type="text" name="jobID" placeholder="Job ID" required>
-        <input type="text" name="location" placeholder="Location" required>
-        <input type="date" name="deadline" required>
-        <textarea name="description" placeholder="Job Description" required></textarea>
-        <textarea name="responsibilities" placeholder="Responsibilities (comma separated)" required></textarea>
-        <textarea name="skillsRequired" placeholder="Skills Required (comma separated)" required></textarea>
-        <input type="text" name="facebook" placeholder="Facebook Link">
-        <input type="text" name="twitter" placeholder="Twitter Link">
-        <input type="text" name="linkedin" placeholder="LinkedIn Link">
-        <input type="file" name="image" accept="image/*" required>
-        <button type="submit">Create Job</button>
+
+    <h1>Test Exam API</h1>
+    <form id="examForm">
+        <label for="serialNo">Serial No:</label>
+        <input type="number" id="serialNo" required>
+
+        <label for="examName">Exam Name:</label>
+        <input type="text" id="examName" required>
+
+        <label for="mode">Mode:</label>
+        <select id="mode" required>
+            <option value="Online">Online</option>
+            <option value="Offline">Offline</option>
+        </select>
+
+        <label for="participatingColleges">Participating Colleges:</label>
+        <input type="number" id="participatingColleges" required>
+
+        <label for="examDate">Exam Date:</label>
+        <input type="date" id="examDate" required>
+
+        <label for="examLevel">Exam Level:</label>
+        <input type="text" id="examLevel" required>
+
+        <label for="logo">Logo:</label>
+        <input type="file" id="logo">
+
+        <button type="submit">Create Exam</button>
     </form>
-    
+
+    <div id="response"></div>
+
     <script>
-    document.getElementById('jobForm').addEventListener('submit', async (event) => {
-        event.preventDefault();
-        
-        const formData = new FormData(event.target);
-        const response = await fetch('http://localhost:5000/jobs', {
-            method: 'POST',
-            body: formData
+        document.getElementById('examForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const formData = new FormData();
+            formData.append('serialNo', document.getElementById('serialNo').value);
+            formData.append('examName', document.getElementById('examName').value);
+            formData.append('mode', document.getElementById('mode').value);
+            formData.append('participatingColleges', document.getElementById('participatingColleges').value);
+            formData.append('examDate', document.getElementById('examDate').value);
+            formData.append('examLevel', document.getElementById('examLevel').value);
+            const logoFile = document.getElementById('logo').files[0];
+            if (logoFile) {
+                formData.append('logo', logoFile);
+            }
+
+            try {
+                const response = await fetch('http://localhost:5000/exams', {
+                    method: 'POST',
+                    body: formData,
+                });
+                const data = await response.json();
+                document.getElementById('response').innerText = JSON.stringify(data, null, 2);
+            } catch (error) {
+                document.getElementById('response').innerText = `Error: ${error.message}`;
+            }
         });
-        
-        const result = await response.json();
-        console.log(result);
-    });
     </script>
-    
+
 </body>
 </html>
