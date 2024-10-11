@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details</title>
+    <link rel="stylesheet" href="path/to/your/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="event-title"></h1>
+        <img id="event-image" alt="">
+        <p id="event-date"></p>
+        <p id="event-time"></p>
+        <p id="event-location"></p>
+        <p id="event-description"></p>
+    </div>
+
+    <script>
+        // Function to fetch event details
+        async function fetchEventDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const eventId = urlParams.get('id');
+
+            try {
+                const response = await fetch(`http://localhost:5000/events/get/${eventId}`);
+                const event = await response.json();
+
+                if (event) {
+                    // Populate the page with event details
+                    document.getElementById('event-title').innerText = event.title;
+                    document.getElementById('event-image').src = `assets/images/event/${event.image}`;
+                    document.getElementById('event-date').innerText = `Date: ${new Date(event.date).toLocaleDateString()}`;
+                    document.getElementById('event-time').innerText = `Time: ${event.timeStart} - ${event.timeEnd}`;
+                    document.getElementById('event-location').innerText = `Location: ${event.location}`;
+                    document.getElementById('event-description').innerText = event.description;
+                } else {
+                    console.error('Event not found');
+                }
+            } catch (error) {
+                console.error('Error fetching event details:', error);
+            }
+        }
+
+        // Call the fetch function on page load
+        document.addEventListener('DOMContentLoaded', fetchEventDetails);
+    </script>
+</body>
+</html>

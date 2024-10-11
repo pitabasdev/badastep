@@ -491,13 +491,13 @@
     <div class="event-data">
       <div class="container">
         <h1>Event Management</h1>
-
+    
         <!-- Event Form -->
         <div id="eventForm" class="form-container">
           <h2 class="form-title">Add New Event</h2>
           <form id="addEventForm" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="event_id" id="event_id" />
-
+    
             <!-- Event Title -->
             <div class="form-group">
               <label for="event_title" class="form-label">Event Title:</label>
@@ -510,7 +510,18 @@
                 required
               />
             </div>
-
+    
+            <!-- Event Category -->
+            <div class="form-group">
+              <label for="event_category" class="form-label">Event Category:</label>
+              <select class="form-control" id="event_category" name="event_category" required>
+                <option value="" disabled selected>Select event category</option>
+                <option value="happening">Happening</option>
+                <option value="upcoming">Upcoming</option>
+                <option value="expired">Expired</option>
+              </select>
+            </div>
+    
             <!-- Event Date and Time -->
             <div class="form-row">
               <div class="form-group col-md-6 col-sm-12">
@@ -523,11 +534,9 @@
                   required
                 />
               </div>
-
+    
               <div class="form-group col-md-3 col-sm-6">
-                <label for="event_time_start" class="form-label"
-                  >Start Time:</label
-                >
+                <label for="event_time_start" class="form-label">Start Time:</label>
                 <input
                   type="time"
                   class="form-control"
@@ -536,7 +545,7 @@
                   required
                 />
               </div>
-
+    
               <div class="form-group col-md-3 col-sm-6">
                 <label for="event_time_end" class="form-label">End Time:</label>
                 <input
@@ -548,7 +557,7 @@
                 />
               </div>
             </div>
-
+    
             <!-- Event Location -->
             <div class="form-group">
               <label for="event_location" class="form-label">Location:</label>
@@ -561,12 +570,10 @@
                 required
               />
             </div>
-
+    
             <!-- Event Description -->
             <div class="form-group">
-              <label for="event_description" class="form-label"
-                >Description:</label
-              >
+              <label for="event_description" class="form-label">Description:</label>
               <textarea
                 class="form-control"
                 id="event_description"
@@ -576,7 +583,7 @@
                 required
               ></textarea>
             </div>
-
+    
             <!-- Event Image -->
             <div class="form-group">
               <label for="event_image" class="form-label">Event Image:</label>
@@ -589,29 +596,22 @@
                 required
               />
             </div>
-
+    
             <!-- Form Buttons -->
             <div class="form-group text-center">
-              <button type="submit" class="btn btn-primary btn-lg">
-                Submit
-              </button>
-              <button
-                type="button"
-                class="btn btn-secondary btn-lg"
-                onclick="resetForm()"
-              >
-                Cancel
-              </button>
+              <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+              <button type="button" class="btn btn-secondary btn-lg" onclick="resetForm()">Cancel</button>
             </div>
           </form>
         </div>
-
+    
         <h2>Upcoming Events</h2>
         <div class="table-responsive">
           <table class="table table-bordered table-hover">
             <thead class="thead-light">
               <tr>
                 <th>Event Title</th>
+                <th>Category</th>
                 <th>Date</th>
                 <th>Start Time</th>
                 <th>End Time</th>
@@ -628,25 +628,26 @@
         </div>
       </div>
     </div>
-
+    
     <script>
       document
         .getElementById("addEventForm")
         .addEventListener("submit", async function (event) {
           event.preventDefault();
-
+    
           const formData = new FormData(this);
-
+    
           try {
             const response = await fetch("http://localhost:5000/events/add", {
               method: "POST",
               body: formData,
             });
-
+    
             if (response.ok) {
               const result = await response.json();
               alert(result.message);
               resetForm();
+              fetchEvents(); // Refresh the event list after adding
             } else {
               const error = await response.json();
               alert("Error: " + error.message);
@@ -655,46 +656,42 @@
             alert("An error occurred: " + error.message);
           }
         });
+    
       function resetForm() {
-        document.getElementById("addEventForm").reset();
+        document.getElementById("addEventForm").reset(); // Reset all form fields
       }
-
+    
       async function fetchEvents() {
         try {
           const response = await fetch("http://localhost:5000/events/get");
           const events = await response.json();
-
+    
           const tableBody = document.getElementById("eventTableBody");
           tableBody.innerHTML = ""; // Clear existing rows
-
+    
           events.forEach((event) => {
             const row = document.createElement("tr");
             row.innerHTML = `
-                    <td>${event.event_title}</td>
-                    <td>${new Date(event.event_date).toLocaleDateString()}</td>
-                    <td>${event.event_time_start}</td>
-                    <td>${event.event_time_end}</td>
-                    <td>${event.event_location}</td>
-                    <td>${event.event_description}</td>
-                    <td><img src="${event.event_image}" alt="${
-              event.event_title
-            }" width="100"></td>
-                    <td>
-                        <button class="btn btn-warning btn-sm" onclick="updateEvent(${
-                          event.event_id
-                        })">Update</button>
-                        <button class="btn btn-danger btn-sm" onclick="deleteEvent(${
-                          event.event_id
-                        })">Delete</button>
-                    </td>
-                `;
+                <td>${event.title}</td>
+                <td>${event.category}</td>
+                <td>${new Date(event.date).toLocaleDateString()}</td>
+                <td>${event.timeStart}</td>
+                <td>${event.timeEnd}</td>
+                <td>${event.location}</td>
+                <td>${event.description}</td>
+                <td><img src="${event.image}" alt="${event.title}" width="100"></td>
+                <td>
+                    <button class="btn btn-warning btn-sm" onclick="updateEvent(${event.event_id})">Update</button>
+                    <button class="btn btn-danger btn-sm" onclick="deleteEvent(${event.event_id})">Delete</button>
+                </td>
+            `;
             tableBody.appendChild(row);
           });
         } catch (error) {
           console.error("Error fetching events:", error);
         }
       }
-
+    
       async function deleteEvent(eventId) {
         if (confirm("Are you sure you want to delete this event?")) {
           try {
@@ -713,18 +710,14 @@
           }
         }
       }
-
+    
       function updateEvent(eventId) {
-        alert(
-          "Update event functionality to be implemented for event ID: " +
-            eventId
-        );
+        alert("Update event functionality to be implemented for event ID: " + eventId);
       }
+    
       window.onload = fetchEvents;
-      function resetForm() {
-        document.getElementById("addEventForm").reset(); // Reset all form fields
-      }
     </script>
+    
     <!-- External JavaScripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/vendors/bootstrap/js/popper.min.js"></script>
