@@ -75,6 +75,14 @@
       href="assets/vendors/revolution/css/navigation.css"
     />
     <!-- REVOLUTION SLIDER END -->
+    <style>
+      .modal {
+          z-index: 1050; /* Higher z-index for modal */
+      }
+      .sticky-header {
+          z-index: 1000; /* Lower z-index for the navbar */
+      }
+  </style>
   </head>
   <body id="bg">
     <div class="page-wraper">
@@ -3789,8 +3797,177 @@
         </div>
         <!-- Recent News End -->
       </div>
+
       <!-- contact area END -->
+       
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="enquireModal" tabindex="-1" aria-labelledby="enquireModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;"> <!-- Set max width for the modal -->
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="enquireModalLabel">Admission Enquiry Form</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <div class="col-lg-12 col-12"> <!-- Change to full width -->
+                      <div class="popup-right">
+                          <div class="popup-heading">
+                              <h2>Enquiry Form</h2>
+                          </div>
+                          <form id="applyNowForm" name="enquiry_form" data-toggle="validator" autocomplete="off">
+                              <span id="msgsuccessmodal" style="color: green;font-size: 16px; font-weight: 600; position: inherit;"></span>
+                              <span id="msgerrormodal" style="color: red;font-size: 16px; font-weight: 600; position: inherit;"></span>
+                              <div class="form-group">
+                                  <label for="apply_full_name">Full Name:</label>
+                                  <input type="text" name="apply_full_name" id="apply_full_name" class="form-control" placeholder="Please enter your full name*" autocomplete="off" style="width: 100%;">
+                              </div>
+                              <div class="form-group">
+                                  <label for="apply_phone">Mobile Number:</label>
+                                  <input type="text" name="apply_phone" id="apply_phone" class="form-control" placeholder="Please enter your 10 digits valid mobile number*" autocomplete="off" style="width: 100%;">
+                              </div>
+  
+                              <div class="form-group">
+                                  <label for="apply_stream">Select Course:</label>
+                                  <select name="apply_main_course" id="apply_main_course" class="form-control" aria-label="popup_course" style="width: 100%;">
+                                      <option value="">Select course</option>
+                                      <option value="3">PH.D. Full Time</option>
+                                      <option value="120">PH.D. Part Time</option>
+                                      <option value="69">D.Pharma - Diploma in Pharmacy</option>
+                                      <option value="8">B.Pharmacy - Bachelor of Pharmacy</option>
+                                      <option value="62">BNYS - Bachelor of Naturopathy and Yoga Science</option>
+                                      <option value="92">ANM - Auxiliary Nurse and Midwife</option>
+                                      <option value="1">B.A - Bachelor of Arts</option>
+                                      <option value="116">B.A - Bachelor of Arts (Honours)</option>
+                                      <option value="94">B.A in Additional- Bachelor of Arts</option>
+                                      <option value="15">B.A.+LL.B - Bachelor of Arts and Bachelor of Legislative Law</option>
+                                      <option value="18">B.Com - Bachelor of Commerce</option>
+                                      <option value="111">B.Des - Bachelor of Design</option>
+                                      <option value="38">B.Ed - Bachelor of Education</option>
+                                      <option value="65">B.Lib - Bachelor of Library Science</option>
+                                      <option value="6">B.P.Ed - Bachelor of Physical Education</option>
+                                      <option value="126">B.Sc - Agriculture</option>
+                                      <option value="2">B.Sc - Bachelor of Science</option>
+                                      <option value="115">B.Sc - Bachelor of Science (Honours)</option>
+                                      <option value="4">B.Tech - Bachelor of Technology</option>
+                                      <option value="96">B.Tech LE- Bachelor of Technology Lateral Entry</option>
+                                      <option value="5">B.Voc - Bachelor of Vocation</option>
+                                      <option value="87">B.VSc - Bachelor in Veterinary Science</option>
+                                      <option value="89">BAMS - Bachelor of Ayurvedic Medicine and Surgery</option>
+                                      <option value="25">BBA - Bachelor of Business Administration</option>
+                                      <option value="68">BCA - Bachelor of Computer Applications</option>
+                                      <option value="109">BCA+MCA</option>
+                                      <option value="85">BDS - Bachelor of Dental Surgery</option>
+                                      <option value="9">BFA - Bachelor of Fine Arts</option>
+                                      <option value="42">BHM - Bachelor of Hotel Management</option>
+                                      <option value="90">BHMS - Bachelor of Homoeopathic Medicine and Surgery</option>
+                                      <option value="60">BJMC - Bachelor of Journalism and Mass Communication</option>
+                                      <option value="59">BMLT - Bachelor of Medical Laboratory Technology</option>
+                                      <option value="125">BNYS LE - Bachelor of Naturopathy and Yoga Science Lateral Entry</option>
+                                      <option value="52">BOTT - Bachelor of Operation Theater Technology</option>
+                                      <option value="56">BPH - Bachelor of Public Health</option>
+                                      <option value="66">BPT - Bachelor of Physiotherapy</option>
+                                      <option value="91">BSW - Bachelor of Social Work</option>
+                                      <option value="10">Certificate Course - 1 Year Program</option>
+                                      <option value="102">Certificate Course - 2 Year Program</option>
+                                      <option value="113">D.Ed - Diploma in Education</option>
+                                      <option value="31">D.El.Ed - Diploma course in Elementary Education</option>
+                                      <option value="64">D.Lib - Diploma in Library and Information Sciences</option>
+                                      <option value="11">D.Voc - Diploma of Vocation - 1 Year Program</option>
+                                      <option value="121">D.Voc - Diploma of Vocation - 2 Year Program</option>
+                                      <option value="104">D.Voc - Diploma of Vocation - 3 Year Program</option>
+                                      <option value="61">DCA - Diploma in Computer Application</option>
+                                      <option value="71">DHM - Diploma in Hotel Management</option>
+                                      <option value="21">Diploma - Polytechnical Engineering</option>
+                                      <option value="12">Diploma Course - 1 Year Program</option>
+                                      <option value="100">Diploma Course - 2 Year Program</option>
+                                      <option value="101">Diploma Course - 3 Year Program</option>
+                                      <option value="97">Diploma LE - Lateral Entry Polytechnical Engineering</option>
+                                      <option value="48">DMLT - Diploma in Medical Laboratory Technology</option>
+                                      <option value="49">DOTT - Diploma in Operation Theatre Technology</option>
+                                      <option value="50">DPT - Diploma in Physiotherapy</option>
+                                      <option value="76">Exam - Examination</option>
+                                      <option value="93">GNM - General Nursing and Midwifery</option>
+                                      <option value="81">ITI - Industrial Training Institute</option>
+                                      <option value="77">LL.D - Doctor of Law</option>
+                                      <option value="28">LLB - Bachelor of Legislative Law</option>
+                                      <option value="29">LLM - Master of Legislative Laws</option>
+                                      <option value="16">M.A - Master of Arts</option>
+                                      <option value="32">M.Arch - Masters in Architecture</option>
+                                      <option value="17">M.Com - Master of Commerce</option>
+                                      <option value="75">M.Design - Master of Design</option>
+                                      <option value="33">M.Ed - Master of Education</option>
+                                      <option value="58">M.Lib - Master of Library and Information Science</option>
+                                      <option value="34">M.Litt -Master of Letters</option>
+                                      <option value="45">M.P.Ed - Master of Physical Education</option>
+                                      <option value="27">M.Pharma - Masters of Pharmaceutical Sciences</option>
+                                      <option value="82">M.Phil - Master of Philosophy</option>
+                                      <option value="23">M.Sc - Master of Science</option>
+                                      <option value="13">M.Tech - Master of Technology</option>
+                                      <option value="20">M.Voc - Master of Vocation</option>
+                                      <option value="24">MBA - Master of Business Administration</option>
+                                      <option value="95">MBA E - Master of Business Administration Executive</option>
+                                      <option value="74">MBBS - Bachelor of Medicine and Bachelor of Surgery</option>
+                                      <option value="67">MCA - Master of Computer Application</option>
+                                      <option value="80">MD - Doctor of Medicine</option>
+                                      <option value="84">MDS - Master of Dental Surgery</option>
+                                      <option value="36">MFA - Master of Fine Arts</option>
+                                      <option value="40">MHM - Master of Hotel Management</option>
+                                      <option value="57">MJMC - Master of Journalism and Mass Communication</option>
+                                      <option value="54">MMLT - Masters of Medical Laboratory Technology</option>
+                                      <option value="55">MPH - Master of Public Health</option>
+                                      <option value="72">MPT - Master of Physiotherapy</option>
+                                      <option value="34">PGD - Postgraduate Diploma</option>
+                                      <option value="22">PGDCA - Post Graduate Diploma in Computer Applications</option>
+                                      <option value="46">PGDHR - Postgraduate Diploma in Human Resource Management</option>
+                                      <option value="37">PGDMM - Postgraduate Diploma in Marketing Management</option>
+                                      <option value="19">PGDM - Postgraduate Diploma in Management</option>
+                                      <option value="35">PGDM- E - Executive Postgraduate Diploma in Management</option>
+                                      <option value="103">PGDTA - Postgraduate Diploma in Travel and Tourism</option>
+                                      <option value="120">UGC NET - National Eligibility Test</option>
+                                  </select>
+                              </div>
+  
+                              <!-- New Select Subject Dropdown -->
+                              <div class="form-group">
+                                  <label for="apply_subject">Select Subject:</label>
+                                  <select name="apply_subject" id="apply_subject" class="form-control" style="width: 100%;">
+                                      <option value="">Select subject</option>
+                                      <!-- Add your subject options here -->
+                                      <option value="subject1">Subject 1</option>
+                                      <option value="subject2">Subject 2</option>
+                                      <option value="subject3">Subject 3</option>
+                                  </select>
+                              </div>
+                              <div class="text-center">
+                                  <button type="submit" id="btn_apply_now" class="btn btn-primary">Submit Enquiry</button>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <div class="d-flex flex-column align-items-start position-fixed" style="top: 55%; left: 7px; transform: translateY(-50%); z-index: 1000; padding-left: 4px;">
+    <a href="" target="_blank" class="btn btn-primary mb-2" data-toggle="modal" data-target="#enquireModal" style="transform: rotate(-90deg); transform-origin: left center; margin-bottom: 10px; border-radius: 0px 0px 10px 10px;">
+        Admission Enquire
+    </a>
+    <a href="tel:9348340291" class="btn btn-primary" style="transform: rotate(-90deg); transform-origin: left center; margin-top: 125px; border-radius: 0px 0px 10px 10px; padding-right: -5pz;">
+      Request A Callback
+  </a>
+  
+</div>
+
+    
+    
+    
+    
+    
     <!-- Content END-->
     <!-- Footer ==== -->
     <footer>
